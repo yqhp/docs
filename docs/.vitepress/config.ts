@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/docs/", // https://vitepress.dev/reference/site-config github地址为https://yqhp.github.io/docs/，需要配置base
   title: "yqhp",
   description: "",
   themeConfig: {
