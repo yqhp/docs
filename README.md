@@ -2,12 +2,12 @@
 
 ## install
 
-pnpm i
+npm instaill
 
 ## dev
 
-pnpm docs:dev
+npm run docs:dev
 
 ## build
 
-pnpm docs:build
+npm run docs:build
