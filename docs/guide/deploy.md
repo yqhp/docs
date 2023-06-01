@@ -89,3 +89,33 @@ $ appium driver list --installed
 - uiautomator2@2.14.0 [installed (npm)]
 
 ```
+
+### 启动 agent 服务
+
+> 下载 [yqhp-agent.zip](https://github.com/yqhp/yqhp/releases)并解压
+
+```sh
+# 进入yqhp-agent目录
+$ cd yqhp-agent
+# 解压后文件夹内应包含agent-web-{version}.jar lib.{version} vendor
+$ ls
+agent-web-0.0.1.jar lib.v1  vendor
+# 启动agent服务，注意：先进入jar所在目录，再用java -jar启动服务，因为配置文件包含vendor相对路径
+# 通常，启动参数只需要指定这3个地址即可。当然，如果是同一台主机，可以不指定
+$ java -jar agent-web-{version}.jar --spring.cloud.nacos.discovery.server-addr=192.168.2.128:8848 --spring.kafka.bootstrap-servers=192.168.2.128:9094 --zk.addr=192.168.2.128:2181
+
+```
+
+#### agent 常用配置说明
+
+> ${NACOS_ADDR:127.0.0.1:8848} 代表默认读取环境变量 NACOS_ADDR，不存在则为 127.0.0.1:8848
+
+| 配置                                     | 说明           | 默认                              | since |
+| ---------------------------------------- | -------------- | --------------------------------- | ----- |
+| spring.cloud.nacos.discovery.server-addr | nacos 地址     | `${NACOS_ADDR:127.0.0.1:8848}`    | 0.0.1 |
+| spring.kafka.bootstrap-servers           | kafka 地址     | `${KAFKA_SERVERS:127.0.0.1:9094}` | 0.0.1 |
+| zk.addr                                  | zookeeper 地址 | `${ZK_ADDR:127.0.0.1:2181}`       | 0.0.1 |
+
+## 关于配置的说明
+
+以 agent 为例，可以将配置文件[application.yml](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/resources/application.yml)放到 agent-web-{version}.jar 所在目录，根据需要修改 application.yml 内容，再使用 java -jar agent-web-{version}.jar 启动服务，`但这不是推荐的做法`，因为后续版本更新，配置文件可能发生变化。`推荐`使用环境变量或启动参数的方式修改配置，如: `java -jar agent-web-0.0.1.jar --spring.cloud.nacos.discovery.server-addr=192.168.2.128:8848`
