@@ -19,7 +19,6 @@
    2. Buckets -> 点击 Create Bucket -> Bucket Name 填写 yqhp -> 点击 Create Bucket，完成创建（若 yqhp 已存在，则忽略这步）
    3. Buckets -> 点击 yqhp 进入编辑页面 -> 将 Access Policy 设置为 public
    4. Access Keys -> 点击 Create Access Key -> Access Key 填写 yqhp -> Secret Key 填写yqhp@123..Aa88 -> 点击 Create 完成创建
-5. 浏览器访问 `http://{宿主机 ip}`，账号密码 admin / admin 登录。若登录失败，等待几分钟重试，服务启动中
 
 ## 部署 agent
 
@@ -119,3 +118,8 @@ $ java -jar agent-web-{version}.jar --spring.cloud.nacos.discovery.server-addr=1
 ## 关于配置的说明
 
 以 agent 为例，可以将配置文件[application.yml](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/resources/application.yml)放到 agent-web-{version}.jar 所在目录，根据需要修改 application.yml 内容，再使用 java -jar agent-web-{version}.jar 启动服务，`但这不是推荐的做法`，因为后续版本更新，配置文件可能发生变化。`推荐`使用环境变量或启动参数的方式修改配置，如: `java -jar agent-web-0.0.1.jar --spring.cloud.nacos.discovery.server-addr=192.168.2.128:8848`
+
+## 验证所有服务是否部署完成
+
+- 登录 nacos 注册中心，`http://{宿主机 ip}:8848`，账号密码: `nacos / nacos`
+- 进入`服务管理/服务列表`，列表内展示`agent-service` `auth-service` `console-service` `file-service` `gateway-service` 代表服务部署完成
