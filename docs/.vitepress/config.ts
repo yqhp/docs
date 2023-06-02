@@ -17,6 +17,7 @@ export default defineConfig({
           { text: "简介", link: "/guide/what-is-yqhp" },
           { text: "部署", link: "/guide/deploy" },
           { text: "设备接入agent", link: "/guide/device-connected-to-agent" },
+          { text: "快速入门", link: "/guide/quick-start" },
         ],
       },
     ],
