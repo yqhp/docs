@@ -20,6 +20,11 @@ export default defineConfig({
           { text: "快速入门", link: "/guide/quick-start" },
         ],
       },
+      {
+        text: "高级特性",
+        collapsed: false,
+        items: [{ text: "Page Object", link: "/guide/advanced/page-object" }],
+      },
     ],
 
     socialLinks: [{ icon: "github", link: "https://github.com/yqhp" }],
