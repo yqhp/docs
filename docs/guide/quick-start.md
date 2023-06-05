@@ -14,9 +14,9 @@
 以 Appium 插件为例
 
 1. 下载 Appium 插件: [appium-plugin-{version}.jar](https://github.com/yqhp/yqhp/releases)
-2. 新建插件 -> 名称: Appium-{version} -> 保存
-3. 上传下载好的插件: appium-plugin-{version}.jar
-4. 项目配置 Appium 插件: 系统管理/项目管理 -> 设置插件 -> 勾选 Appium-{version}
+2. 新建插件 -> 名称: `Appium-{version}` -> 保存
+3. 上传下载好的插件: `appium-plugin-{version}.jar`
+4. 项目配置 Appium 插件: 系统管理/项目管理 -> 设置插件 -> 勾选 `Appium-{version}`
 
 ### 用户管理
 
