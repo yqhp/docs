@@ -13,14 +13,10 @@
 
 以 Appium 插件为例
 
-1. 下载 Appium 插件: appium-plugin-0.0.1.jar
-2. 新建插件 -> 名称: Appium-0.0.1 -> 保存
-3. 上传下载好的插件: appium-plugin-0.0.1.jar
-4. 项目配置 Appium 插件: 系统管理/项目管理 -> 设置插件 -> 勾选 Appium-0.0.1
-
-| 渠道          | 插件   | 说明                                    | 下载地址                                      | 文档地址                                                            |
-| ------------- | ------ | --------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------- |
-| yqhp 官方维护 | Appium | 包装 AppiumDriver，提供更容易使用的 api | [查看](https://github.com/yqhp/yqhp/releases) | [查看](https://github.com/yqhp/yqhp/tree/main/agent/plugins/appium) |
+1. 下载 Appium 插件: [appium-plugin-{version}.jar](https://github.com/yqhp/yqhp/releases)
+2. 新建插件 -> 名称: Appium-{version} -> 保存
+3. 上传下载好的插件: appium-plugin-{version}.jar
+4. 项目配置 Appium 插件: 系统管理/项目管理 -> 设置插件 -> 勾选 Appium-{version}
 
 ### 用户管理
 

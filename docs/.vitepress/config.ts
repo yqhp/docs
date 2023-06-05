@@ -18,6 +18,7 @@ export default defineConfig({
           { text: "部署", link: "/guide/deploy" },
           { text: "设备接入agent", link: "/guide/device-connected-to-agent" },
           { text: "快速入门", link: "/guide/quick-start" },
+          { text: "插件", link: "/guide/plugins" },
         ],
       },
       {
