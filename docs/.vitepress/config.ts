@@ -19,7 +19,7 @@ export default defineConfig({
           { text: "设备接入agent", link: "/guide/device-connected-to-agent" },
           { text: "快速入门", link: "/guide/quick-start" },
           { text: "插件", link: "/guide/plugins" },
-          { text: "Coding", link: "/guide/coding" },
+          { text: "Coding指南", link: "/guide/coding" },
         ],
       },
       {
