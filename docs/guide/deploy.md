@@ -121,5 +121,5 @@ $ java -jar agent-web-{version}.jar --spring.cloud.nacos.discovery.server-addr=1
 
 ## 验证所有服务是否部署完成
 
-- 登录 nacos 注册中心，`http://{宿主机 ip}:8848`，账号密码: `nacos / nacos`
+- 登录 nacos 注册中心，`http://{宿主机 ip}:8848/nacos`，账号密码: `nacos / nacos`
 - 进入`服务管理/服务列表`，列表内展示`agent-service` `auth-service` `console-service` `file-service` `gateway-service` 代表服务部署完成
