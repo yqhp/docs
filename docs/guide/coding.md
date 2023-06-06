@@ -41,6 +41,7 @@
 4. `init`目录 -> 新建 `断言导入`Doc（类型为`初始化`） -> 填充以下内容，并设置为`发布`状态
 
    ```java
+   import org.junit.jupiter.api.Assertions;
    import static org.junit.jupiter.api.Assertions.*;
    ```
 
