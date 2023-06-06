@@ -2,7 +2,7 @@
 
 ## install
 
-npm instaill
+npm install
 
 ## dev
 
