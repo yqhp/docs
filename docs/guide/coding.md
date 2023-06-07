@@ -33,6 +33,7 @@
    import org.openqa.selenium.support.PageFactory;
    import org.openqa.selenium.interactions.*;
    import io.appium.java_client.*;
+   import io.appium.java_client.remote.*;
    import io.appium.java_client.pagefactory.*;
    import io.appium.java_client.android.*;
    import io.appium.java_client.android.nativekey.*;
