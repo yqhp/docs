@@ -35,13 +35,12 @@ jobs:
     needs: ["github-deploy"]
     runs-on: ubuntu-latest
     steps:
-      - uses: peiyanlu/git-sync-action@v1
+      - uses: wearerequired/git-mirror-action@master
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         with:
           source-repo: git@github.com:yqhp/docs.git
           destination-repo: git@gitee.com:jiangyitao/yqhp-docs.git
-          destination-branch: gh-pages
 
       - name: Build Gitee Pages
         uses: yanglbme/gitee-pages-action@main
