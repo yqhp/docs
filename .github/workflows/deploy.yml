@@ -24,10 +24,9 @@ jobs:
       - run: npm ci
       - name: Build
         run: npm run docs:build
-      - uses: actions/configure-pages@v2
-      - uses: actions/upload-pages-artifact@v1
-        with:
-          path: docs/.vitepress/dist
+
       - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GIT_TOKEN }} # GitHub 私人令牌
+          publish_dir: docs/.vitepress/dist # 部署的文件目录
