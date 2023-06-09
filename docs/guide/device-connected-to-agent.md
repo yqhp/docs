@@ -13,4 +13,12 @@
 - 开发者选项: USB 调试 / USB 安装 / USB 调试（安全设置）-> `打开`
 - 开发者选项: 启动 MIUI 优化 / 高风险功能开启提醒 -> `关闭`
 - 打开`手机管家`APP -> 点击`应用管理` -> 点击`权限` -> 点击右上角`设置`按钮 -> `关闭`应用权限监控 -> `关闭` USB 安装管理
-- (这一步需要后续执行 app 自动化后操作) 打开`手机管家`APP -> 点击`省电与电池` -> 点击右上角`设置`按钮 -> 点击`应用智能省电` -> 将`Appium Settings` / `io.appium.uiautomator2.server` / `io.appium.uiautomator2.server.test`设置为`无限制`
+- (这一步需要执行过一次 app 自动化后执行) 打开`手机管家`APP -> 点击`省电与电池` -> 点击右上角`设置`按钮 -> 点击`应用智能省电` -> 将`Appium Settings` / `io.appium.uiautomator2.server` / `io.appium.uiautomator2.server.test`设置为`无限制`
+
+### 华为/荣耀手机
+
+- 开启开发者选项: 设置 -> 关于手机 -> 连续点击`版本号`
+- 进入开发者选项: 设置 -> 系统和更新 -> 开发人员选项
+- 开发者选项: USB 调试 / "仅充电"模式下允许 ADB 调试 -> `打开`
+- 开发者选项: 监控 ADB 安装应用 -> `关闭`
+- (这一步需要执行过一次 app 自动化后执行) 设置 -> 应用和服务 -> 应用启动管理 -> 搜索应用: appium -> 将`Appium Settings` / `io.appium.uiautomator2.server` / `io.appium.uiautomator2.server.test`设置为`手动管理(允许自启动 & 允许后台活动)`
