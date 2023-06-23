@@ -20,6 +20,7 @@ export default defineConfig({
           { text: "快速入门", link: "/guide/quick-start" },
           { text: "插件", link: "/guide/plugins" },
           { text: "Coding指南", link: "/guide/coding" },
+          { text: "Webview", link: "/guide/webview" },
         ],
       },
       {
@@ -29,6 +30,10 @@ export default defineConfig({
           { text: "Page Object", link: "/guide/advanced/page-object" },
           { text: "报告通知", link: "/guide/advanced/report-notification" },
         ],
+      },
+      {
+        text: "版本更新记录",
+        link: "/releases/", // This shows `/releases/index.md` page.
       },
     ],
 
