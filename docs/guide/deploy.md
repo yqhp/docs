@@ -20,13 +20,32 @@
    3. Buckets -> 点击 yqhp 进入编辑页面 -> 将 Access Policy 设置为 public
    4. Access Keys -> 点击 Create Access Key -> Access Key 填写 yqhp -> Secret Key 填写yqhp@123..Aa88 -> 点击 Create 完成创建
 
-## 部署 agent
+## 部署 agent (docker)
 
-> Agent 暂不支持 docker 部署。注意，请勿在一台主机上运行多个 agent 服务
+:::tip
+宿主机必须为 linux，非 linux 请使用非 docker 方式部署 agent
+:::
+
+```sh
+docker run --privileged -d \
+ -p 10004:10004 \
+ -e NACOS_DISCOVERY_IP=192.168.2.201 \
+ -e NACOS_ADDR=192.168.2.128:8848 \
+ -e KAFKA_SERVERS=192.168.2.128:9094 \
+ -e ZK_ADDR=192.168.2.128:2181 \
+ -v /dev/bus/usb:/dev/bus/usb \
+ -v ~/.android:/home/androidusr/.android \
+ --name yqhp-agent registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-agent:0.0.2
+```
+
+- NACOS_DISCOVERY_IP 调整为`当前宿主机ip`
+- NACOS_ADDR / KAFKA_SERVERS / ZK_ADDR 调整为可用的地址
+
+## 部署 agent (非 docker)
 
 ### 安装 java
 
-`java11`(oraclejdk 与 openjdk 都可以)，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (win: `%JAVA_HOME%\bin`) 添加到 `Path`
+`java11`(oraclejdk 与 openjdk 都可以，经测试 java17 存在问题，java11 没问题)，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (win: `%JAVA_HOME%\bin`) 添加到 `Path`
 
 ```bash
 # 验证java版本是否为11
@@ -105,19 +124,16 @@ $ java -jar agent-web-{version}.jar --spring.cloud.nacos.discovery.server-addr=1
 
 ```
 
-#### agent 常用配置说明
+## agent 常用配置说明
 
 > ${NACOS_ADDR:127.0.0.1:8848} 代表默认读取环境变量 NACOS_ADDR，不存在则为 127.0.0.1:8848
 
-| 配置                                     | 说明           | 默认                              | since |
-| ---------------------------------------- | -------------- | --------------------------------- | ----- |
-| spring.cloud.nacos.discovery.server-addr | nacos 地址     | `${NACOS_ADDR:127.0.0.1:8848}`    | 0.0.1 |
-| spring.kafka.bootstrap-servers           | kafka 地址     | `${KAFKA_SERVERS:127.0.0.1:9094}` | 0.0.1 |
-| zk.addr                                  | zookeeper 地址 | `${ZK_ADDR:127.0.0.1:2181}`       | 0.0.1 |
-
-## 关于配置的说明
-
-以 agent 为例，可以将配置文件[application.yml](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/resources/application.yml)放到 agent-web-{version}.jar 所在目录，根据需要修改 application.yml 内容，再使用 java -jar agent-web-{version}.jar 启动服务，`但这不是推荐的做法`，因为后续版本更新，配置文件可能发生变化。`推荐`使用环境变量或启动参数的方式修改配置，如: `java -jar agent-web-0.0.1.jar --spring.cloud.nacos.discovery.server-addr=192.168.2.128:8848`
+| 配置                                     | 说明                     | 默认                              | since |
+| ---------------------------------------- | ------------------------ | --------------------------------- | ----- |
+| spring.cloud.nacos.discovery.ip          | 客户端注册到 nacos 的 ip | `${NACOS_DISCOVERY_IP:}`          | 0.0.1 |
+| spring.cloud.nacos.discovery.server-addr | nacos 地址               | `${NACOS_ADDR:127.0.0.1:8848}`    | 0.0.1 |
+| spring.kafka.bootstrap-servers           | kafka 地址               | `${KAFKA_SERVERS:127.0.0.1:9094}` | 0.0.1 |
+| zk.addr                                  | zookeeper 地址           | `${ZK_ADDR:127.0.0.1:2181}`       | 0.0.1 |
 
 ## 验证所有服务是否部署完成
 
