@@ -35,7 +35,7 @@ docker run --privileged -d \
  -e ZK_ADDR=192.168.2.128:2181 \
  -v /dev/bus/usb:/dev/bus/usb \
  -v ~/.android:/home/androidusr/.android \
- --name yqhp-agent registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-agent:0.0.2
+ --name yqhp-agent registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-agent:latest
 ```
 
 - NACOS_DISCOVERY_IP 调整为`当前宿主机ip`
