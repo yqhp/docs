@@ -50,10 +50,10 @@ docker run --privileged -d \
 
 ### 安装 java
 
-`java11`(oraclejdk 与 openjdk 都可以，经测试 java17 存在问题，java11 没问题)，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (win: `%JAVA_HOME%\bin`) 添加到 `Path`
+`>=java11`(oraclejdk 与 openjdk 都可以)，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (win: `%JAVA_HOME%\bin`) 添加到 `Path`
 
 ```bash
-# 验证java版本是否为11
+# 验证java版本是否>=11
 $ java -version
 java version "11.0.14" 2022-01-18 LTS
 Java(TM) SE Runtime Environment 18.9 (build 11.0.14+8-LTS-263)
