@@ -10,7 +10,7 @@
 
 > 如部署架构图所示，中间件与服务较多，服务器内存建议 >= 8GB
 
-1. 启动 [docker-compose.yml](https://github.com/yqhp/yqhp/blob/main/docker/docker-compose.yml)
+1. 启动 [docker-compose.yml](http://139.9.5.56:9000/yqhp-res/docker-compose.yml)
 
 ```sh
 # 将192.168.2.128替换为宿主机局域网ip
