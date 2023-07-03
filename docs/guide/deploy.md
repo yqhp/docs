@@ -17,7 +17,7 @@
 export MY_IP=192.168.2.128;docker-compose up -d
 ```
 
-2. 连接数据库执行初始化 [sql](https://github.com/yqhp/yqhp/blob/main/db.sql)
+2. 连接数据库执行初始化 [sql](http://139.9.5.56:9000/yqhp-res/db.sql)
    > 数据库用户名密码 root / yqhp@123..Aa88，端口 3306。mysql 在启动过程中可能连接失败，重试即可
 3. 初始化 minio 数据
    1. 访问 `http://{宿主机 ip}:9001`，账号密码 admin / yqhp@123..Aa88
