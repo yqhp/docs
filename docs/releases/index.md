@@ -1,5 +1,13 @@
 # 版本发布记录
 
+## v4 -> v5 (2023-07-04)
+
+- 增加 HttpClient(rest-assured)支持 [查看使用说明](/guide/rest-assured)
+
+| 项目       | 版本           | 说明                             |
+| ---------- | -------------- | -------------------------------- |
+| yqhp-agent | 0.0.3 -> 0.0.4 | docker image tag: 0.0.3 -> 0.0.4 |
+
 ## v3 -> v4 (2023-06-29)
 
 - fix: agent 在 java17 下，page factory 报错
