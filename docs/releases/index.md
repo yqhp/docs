@@ -1,5 +1,17 @@
 # 版本发布记录
 
+## v5 -> v6 (2023-07-05)
+
+- web-ui: 增加取色功能
+- agent: 脚本内置 print(Object obj)
+- plugin: 增加图片识别插件 easyimg@0.0.1
+
+| 项目         | 版本           | 说明                             |
+| ------------ | -------------- | -------------------------------- |
+| yqhp-web-ui  | 0.0.4 -> 0.0.5 | docker image tag: 0.0.4 -> 0.0.5 |
+| yqhp-agent   | 0.0.4 -> 0.0.7 | docker image tag: 0.0.4 -> 0.0.7 |
+| yqhp-easyimg | 0.0.1          | [查看](/guide/plugins)           |
+
 ## v4 -> v5 (2023-07-04)
 
 - 增加 HttpClient(rest-assured)支持 [查看使用说明](/guide/rest-assured)
