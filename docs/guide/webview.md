@@ -21,7 +21,15 @@ d.androidDriver().context("NATIVE_APP");
 
 ## Webview 调试
 
-> 版本 V2 新增的功能，具体信息请关注`版本更新记录`
+> 由于目前调试页面依赖 google 提供的地址，浏览器需要能访问"外网"
+
+:::tip
+由于浏览器安全限制，需要添加白名单
+
+1. chrome 浏览器，访问 chrome://settings/content/insecureContent
+2. 允许显示不安全的内容 -> 添加 -> https://chrome-devtools-frontend.appspot.com
+
+:::
 
 1. 设备调试页面，点击`chrome小图标`，点击`刷新`获取所有 webview
-2. 选择目标页面，点击`调试`将跳转到 webview 调试页面 (webview 调试页面实际访问的是 google 的一个 url，需要梯子才能打开。后续会提供一个国内可访问的链接)
+2. 选择目标页面，点击`调试`将跳转到 webview 调试页面
