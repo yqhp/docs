@@ -99,17 +99,17 @@ $ npm -v
 9.5.1
 
 # 安装appium2.x
-$ npm install -g appium@next
+$ npm install -g appium
 # 查看appium版本
 $ appium -v
-2.0.0-beta.66
+2.0.0
 
 # 安装uiautomator2驱动(由于部分资源来自github，没有梯子的话需要多试n次)
 $ appium driver install uiautomator2
 # 查看已安装的驱动
 $ appium driver list --installed
 ✔ Listing installed drivers
-- uiautomator2@2.14.0 [installed (npm)]
+- uiautomator2@2.29.2 [installed (npm)]
 
 ```
 
