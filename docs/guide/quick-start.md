@@ -11,12 +11,7 @@
 
 ### 插件管理
 
-以 Appium 插件为例
-
-1. 下载 Appium 插件: [appium-plugin-{version}.jar](https://github.com/yqhp/yqhp/releases)
-2. 新建插件 -> 名称: `yqhp-appium` -> 保存
-3. 上传下载好的插件: `appium-plugin-{version}.jar`
-4. 项目启用 yqhp-appium 插件: 系统管理/项目管理 -> 设置插件 -> 勾选 `yqhp-appium`
+[查看](/guide/plugins)
 
 ### 用户管理
 

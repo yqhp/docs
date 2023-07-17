@@ -92,15 +92,15 @@ $ dir %ANDROID_HOME%\build-tools
 ### 安装 appium2.x
 
 ```bash
-# 安装nodejs，推荐最新LTS版本
+# 安装nodejs，推荐最新LTS版本。node -v >= v16.0.0, npm -v >= 8.0.0
 $ node -v
 v18.16.0
 $ npm -v
 9.5.1
 
-# 安装appium2.x
-$ npm install -g appium
-# 查看appium版本
+# 安装appium2.x (如果已经安装了appium1.x，需卸载。卸载命令: npm uninstall --location=global appium)
+$ npm i --location=global appium
+# 安装完成后，验证appium版本
 $ appium -v
 2.0.0
 

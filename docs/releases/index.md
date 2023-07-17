@@ -47,4 +47,4 @@
 | ------------ | -------------- | ------------------------------------------------------------ |
 | yqhp-web-ui  | 0.0.1 -> 0.0.3 | docker image tag: 0.0.1 -> 0.0.3                             |
 | yqhp-gateway | 0.0.1 -> 0.0.2 | docker image tag: 0.0.1 -> 0.0.2                             |
-| yqhp-agent   | 0.0.1 -> 0.0.2 | 下载 [yqhp-agent.zip](https://github.com/yqhp/yqhp/releases) |
+| yqhp-agent   | 0.0.1 -> 0.0.2 |  |
