@@ -46,7 +46,7 @@
    import static org.junit.jupiter.api.Assertions.*;
    ```
 
-5. [初始化 yqhp 官方 appium 插件] `init`目录 -> 新建 `初始化AppiumDriver`Doc（类型为`初始化`） -> 填充[内容](https://github.com/yqhp/yqhp/tree/main/agent/plugins/appium)，并设置为`发布`状态
+5. [初始化插件](/guide/plugins#插件列表)
 
 ## 代码调试
 
