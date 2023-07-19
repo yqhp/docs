@@ -2,14 +2,26 @@
 
 ## 内置变量
 
+> 内置变量为 doc 可以直接使用的变量，如获取 appiumDriver: yqhp.appiumDriver()
+
 | 变量名 | API                                                                                                          |
 | ------ | ------------------------------------------------------------------------------------------------------------ |
 | yqhp   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/YQHP.java) |
 
 ## 初始化
 
+:::tip
+调试会话建立后将自动完成以下动作
+
+1. 自动加载当前项目配置的`plugin`
+2. 自动执行类型为`初始化`且状态`可用`的`doc`
+
+:::
+
 1. 新建`init`目录
-2. `init`目录 -> 新建`java导入`Doc（类型为`初始化`） -> 填充以下内容，并设置为`发布`状态
+2. 在`init`目录下新建以下 doc（类型为`初始化`, 状态为`发布`）
+
+   doc: `java 导入`
 
    ```java
    import java.io.*;
@@ -25,7 +37,7 @@
    import java.time.*;
    ```
 
-3. `init`目录 -> 新建 `appium导入`Doc（类型为`初始化`） -> 填充以下内容，并设置为`发布`状态
+   doc: `appium导入`
 
    ```java
    import org.openqa.selenium.*;
@@ -39,16 +51,18 @@
    import io.appium.java_client.android.nativekey.*;
    ```
 
-4. `init`目录 -> 新建 `断言导入`Doc（类型为`初始化`） -> 填充以下内容，并设置为`发布`状态
+   doc: `断言导入`
 
    ```java
    import org.junit.jupiter.api.Assertions;
    import static org.junit.jupiter.api.Assertions.*;
    ```
 
-5. [初始化插件](/guide/plugins#插件列表)
+3. 在`init`目录下新建初始化插件 doc（类型为`初始化`, 状态为`发布`）
+
+[查看](/guide/plugins#插件列表)
 
 ## 代码调试
 
-1. 选择设备调试，调试会话建立后，自动加载当前项目配置的`Plugin`，自动执行状态为`可用`的`初始化`doc（顺序从上往下）
+1. 选择设备调试
 2. 新建一个`action` doc，输入`d.text("xxx").click();`，`F1`执行
