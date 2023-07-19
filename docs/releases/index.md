@@ -6,7 +6,7 @@
 
 | 项目                   | 版本           | 说明                             |
 | ---------------------- | -------------- | -------------------------------- |
-| yqhp-web-ui            | 0.0.5 -> 0.0.6 | docker image tag: 0.0.5 -> 0.0.6 |
+| yqhp-web-ui            | 0.0.5 -> 0.0.7 | docker image tag: 0.0.5 -> 0.0.7 |
 | yqhp-agent             | 0.0.7 -> 0.0.8 | docker image tag: 0.0.7 -> 0.0.8 |
 | `[plugin]`yqhp-easyimg | 0.0.1 -> 0.0.3 | [查看](/guide/plugins#插件列表)  |
 
