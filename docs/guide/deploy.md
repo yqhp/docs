@@ -13,6 +13,8 @@
 1. 启动 [docker-compose.yml](/docker-compose.yml)
 
    ```sh
+   # 下载docker-compose.yml
+   curl https://yqhp.github.io/docs/docker-compose.yml > docker-compose.yml
    # 将192.168.2.128替换为宿主机局域网ip
    export MY_IP=192.168.2.128;docker-compose up -d
    ```
