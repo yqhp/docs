@@ -21,7 +21,7 @@
 1. 新建`init`目录
 2. 在`init`目录下新建以下 doc（类型为`初始化`, 状态为`发布`）
 
-   doc: `java 导入`
+   doc: `java导入`
 
    ```java
    import java.io.*;
@@ -37,13 +37,18 @@
    import java.time.*;
    ```
 
-   doc: `appium导入`
+   doc: `selenium导入`
 
    ```java
    import org.openqa.selenium.*;
    import org.openqa.selenium.remote.*;
    import org.openqa.selenium.support.PageFactory;
    import org.openqa.selenium.interactions.*;
+   ```
+
+   doc: `appium导入`
+
+   ```java
    import io.appium.java_client.*;
    import io.appium.java_client.remote.*;
    import io.appium.java_client.pagefactory.*;
