@@ -2,11 +2,11 @@
 
 ## 内置变量
 
-> 内置变量为 doc 可以直接使用的变量，如获取 appiumDriver: yqhp.appiumDriver()
+> 内置变量为 doc 可以直接使用的变量，如获取 appiumDriver: device.appiumDriver()
 
 | 变量名 | API                                                                                                          |
 | ------ | ------------------------------------------------------------------------------------------------------------ |
-| yqhp   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/YQHP.java) |
+| device   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/DeviceYQHP.java) |
 
 ## 初始化
 

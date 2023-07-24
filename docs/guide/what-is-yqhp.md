@@ -6,8 +6,8 @@ yqhp 是一个开源免费的分布式自动化系统。yqhp 推崇`Code First`�
 
 ## 自动化支持
 
-- Android
-- iOS(下一步计划)
+- Android 自动化
+- PC Web 自动化 & 接口自动化(`进行中`)
 
 ## QQ 交流群
 
