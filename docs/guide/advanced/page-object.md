@@ -13,7 +13,7 @@ class HomePage {
 
     // 注意，这里需要和class名称一致，这是java语法规则
     HomePage() {
-        PageFactory.initElements(new AppiumFieldDecorator(yqhp.appiumDriver()), this);
+        PageFactory.initElements(new AppiumFieldDecorator(device.appiumDriver()), this);
     }
 
     void goToLoginPage1() {
@@ -38,7 +38,7 @@ class 手机号登录注册页 {
     By 登录按钮 = AppiumBy.id("xxx:id/submit");
 
     手机号登录注册页() {
-        PageFactory.initElements(new AppiumFieldDecorator(yqhp.appiumDriver()), this);
+        PageFactory.initElements(new AppiumFieldDecorator(device.appiumDriver()), this);
     }
 
     手机号登录注册页 输入手机号(String phone) {
