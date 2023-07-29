@@ -4,7 +4,6 @@
 | ----------------------- | ----------------------------------------------- | ----------------- | --------------------------------------------- |
 | DOC_EXECUTION_RECORD    | agent -> console(1 个实例默认配置了 2 个消费者) | 40                | agent 将 doc 执行结果同步给 console           |
 | PLUGIN_EXECUTION_RECORD | agent -> console(1 个实例默认配置了 2 个消费者) | 40                | agent 将 plugin 执行结果同步给 console        |
-| TASK                    | console -> agent(1 个实例默认配置了 1 个消费者) | 40                | console 将非设备任务同步给 agent 执行         |
 | EXECUTION_REPORT        | console -> ?                                    | 20                | 任务执行完成后 console 将报告数据发送到 kafka |
 
 增大 Topic Partition(分区)数与消费者个数，可以提升系统的并行消费能力。若 topic 出现消费能力不足的情况，可以增加该 topic 的分区数与消费者个数，来提升消费能力。由于 1 个分区只能被 1 个消费者消费，所以 topic 的分区数应>= topic 的消费者个数。
