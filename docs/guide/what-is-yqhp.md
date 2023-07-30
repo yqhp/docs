@@ -6,7 +6,7 @@ yqhp 是一个开源免费的分布式自动化系统。yqhp 推崇`Code First`�
 
 ## 自动化支持
 
-- Android 自动化
+- Android 自动化 (appium)
 - PC Web 自动化 (selenium)
 - 接口自动化 (rest-assured)
 - iOS 自动化(`下一步计划`)
