@@ -27,7 +27,7 @@
    3. Buckets -> 点击 yqhp 进入编辑页面 -> 将 Access Policy 设置为 public
    4. Access Keys -> 点击 Create Access Key -> Access Key 填写 yqhp -> Secret Key 填写yqhp@123..Aa88 -> 点击 Create 完成创建
 
-## 部署 agent (docker)
+<!-- ## 部署 agent (docker)
 
 :::tip
 宿主机必须为 linux，非 linux 请使用非 docker 方式部署 agent
@@ -46,74 +46,76 @@ docker run --privileged -d \
 ```
 
 - NACOS_DISCOVERY_IP 调整为`当前宿主机ip`
-- NACOS_ADDR / KAFKA_SERVERS / ZK_ADDR 调整为可用的地址
+- NACOS_ADDR / KAFKA_SERVERS / ZK_ADDR 调整为可用的地址 -->
 
-## 部署 agent (非 docker)
+## 部署 agent
 
-### 安装 java
+### agent 环境搭建
 
-`>=java11`(oraclejdk 与 openjdk 都可以)，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (win: `%JAVA_HOME%\bin`) 添加到 `Path`
+1. 安装 java
 
-```bash
-# 验证java版本是否>=11
-$ java -version
-java version "11.0.14" 2022-01-18 LTS
-Java(TM) SE Runtime Environment 18.9 (build 11.0.14+8-LTS-263)
-Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.14+8-LTS-263, mixed mode)
-```
+   `>=java11`(oraclejdk 与 openjdk 都可以，推荐 java11)，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (win: `%JAVA_HOME%\bin`) 添加到 `Path`
 
-### 安装 Android SDK
+   ```bash
+   # 验证java版本是否>=11
+   $ java -version
+   java version "11.0.14" 2022-01-18 LTS
+   Java(TM) SE Runtime Environment 18.9 (build 11.0.14+8-LTS-263)
+   Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.14+8-LTS-263, mixed mode)
+   ```
 
-> 建议安装 Android Studio 并启动，会自动下载 android sdk
+2. (非 android 自动化，忽略这一步)安装 Android SDK
 
-环境变量配置 `ANDROID_HOME`，并将`$ANDROID_HOME/platform-tools` (win: `%ANDROID_HOME%\platform-tools`) 添加到 `Path`
+   > 建议安装 Android Studio 并启动，会自动下载 android sdk
 
-```bash
-# linux / macos
-$ echo $ANDROID_HOME
-/Users/jiangyitao/Library/Android/sdk
-# windows
-$ echo %ANDROID_HOME%
-C:\Users\jiangyitao\AppData\Local\Android\Sdk
+   环境变量配置 `ANDROID_HOME`，并将`$ANDROID_HOME/platform-tools` (win: `%ANDROID_HOME%\platform-tools`) 添加到 `Path`
 
-# 验证adb
-$ adb version
-Android Debug Bridge version 1.0.41
-Version 30.0.5-6877874
-Installed as /Users/jiangyitao/Library/Android/sdk/platform-tools/adb
+   ```bash
+   # linux / macos
+   $ echo $ANDROID_HOME
+   /Users/jiangyitao/Library/Android/sdk
+   # windows
+   $ echo %ANDROID_HOME%
+   C:\Users\jiangyitao\AppData\Local\Android\Sdk
 
-# 验证build-tools是否存在
-# linux / macos
-$ ls $ANDROID_HOME/build-tools
-30.0.3
-# windows
-$ dir %ANDROID_HOME%\build-tools
-2023/05/22  11:51    <DIR>          33.0.2
-```
+   # 验证adb
+   $ adb version
+   Android Debug Bridge version 1.0.41
+   Version 30.0.5-6877874
+   Installed as /Users/jiangyitao/Library/Android/sdk/platform-tools/adb
 
-### 安装 appium2.x
+   # 验证build-tools是否存在
+   # linux / macos
+   $ ls $ANDROID_HOME/build-tools
+   30.0.3
+   # windows
+   $ dir %ANDROID_HOME%\build-tools
+   2023/05/22  11:51    <DIR>          33.0.2
+   ```
 
-```bash
-# 安装nodejs，推荐最新LTS版本。node -v >= v16.0.0, npm -v >= 8.0.0
-$ node -v
-v18.16.0
-$ npm -v
-9.5.1
+3. (非移动端自动化，忽略这一步)安装 appium2.x
 
-# 安装appium2.x (如果已经安装了appium1.x，需卸载。卸载命令: npm uninstall --location=global appium)
-$ npm i --location=global appium
-# 安装完成后，验证appium版本
-$ appium -v
-2.0.0
+   ```bash
+   # 安装nodejs，推荐最新LTS版本。node -v >= v16.0.0, npm -v >= 8.0.0
+   $ node -v
+   v18.16.0
+   $ npm -v
+   9.5.1
 
-# 安装uiautomator2驱动(由于部分资源来自github，没有梯子的话需要多试n次)
-$ appium driver install uiautomator2
-# 查看已安装的驱动
-$ appium driver list --installed
-✔ Listing installed drivers
-- uiautomator2@2.29.2 [installed (npm)]
+   # 安装appium2.x (如果已经安装了appium1.x，需卸载。卸载命令: npm uninstall --location=global appium)
+   $ npm i --location=global appium
+   # 安装完成后，验证appium版本
+   $ appium -v
+   2.0.0
 
-```
+   # 安装uiautomator2驱动(由于部分资源来自github，没有梯子的话需要多试n次)
+   $ appium driver install uiautomator2
+   # 查看已安装的驱动
+   $ appium driver list --installed
+   ✔ Listing installed drivers
+   - uiautomator2@2.29.2 [installed (npm)]
+
+   ```
 
 ### 启动 agent 服务
 
@@ -131,7 +133,7 @@ $ java -jar agent-web-{version}.jar --spring.cloud.nacos.discovery.server-addr=1
 
 ```
 
-## agent 常用配置说明
+### agent 常用配置说明
 
 > ${NACOS_ADDR:127.0.0.1:8848} 代表默认读取环境变量 NACOS_ADDR，不存在则为 127.0.0.1:8848
 
@@ -141,6 +143,7 @@ $ java -jar agent-web-{version}.jar --spring.cloud.nacos.discovery.server-addr=1
 | spring.cloud.nacos.discovery.server-addr | nacos 地址               | `${NACOS_ADDR:127.0.0.1:8848}`    | 0.0.1 |
 | spring.kafka.bootstrap-servers           | kafka 地址               | `${KAFKA_SERVERS:127.0.0.1:9094}` | 0.0.1 |
 | zk.addr                                  | zookeeper 地址           | `${ZK_ADDR:127.0.0.1:2181}`       | 0.0.1 |
+| agent.description                        | agent 调试页面展示的描述 | `${AGENT_DESC:}`                  | 0.2.0 |
 
 ## 验证所有服务是否部署完成
 

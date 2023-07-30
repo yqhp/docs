@@ -2,11 +2,12 @@
 
 ## 内置变量
 
-> 内置变量为 doc 可以直接使用的变量，如获取 appiumDriver: device.appiumDriver()
+> 内置变量为 doc 可以直接使用的变量，如 device.appiumDriver()
 
-| 变量名 | API                                                                                                          |
-| ------ | ------------------------------------------------------------------------------------------------------------ |
-| device   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/DeviceYQHP.java) |
+| 变量名 | 说明       | API                                                                                                                |
+| ------ | ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| device | 设备调试   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/DeviceYQHP.java) |
+| yqhp   | agent 调试 | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/YQHP.java)       |
 
 ## 初始化
 
@@ -14,7 +15,7 @@
 调试会话建立后将自动完成以下动作
 
 1. 自动加载当前项目配置的`plugin`
-2. 自动执行类型为`初始化`且状态`可用`的`doc`
+2. 自动执行类型为`初始化`且`状态可用`的`doc`
 
 :::
 
@@ -37,7 +38,7 @@
    import java.time.*;
    ```
 
-   doc: `selenium导入`
+   (app/web 自动化)doc: `selenium导入`
 
    ```java
    import org.openqa.selenium.*;
@@ -48,7 +49,7 @@
    import org.openqa.selenium.chrome.ChromeDriver;
    ```
 
-   doc: `appium导入`
+   (app 自动化)doc: `appium导入`
 
    ```java
    import io.appium.java_client.*;
@@ -71,5 +72,5 @@
 
 ## 代码调试
 
-1. 选择设备调试
-2. 新建一个`action` doc，输入`d.text("xxx").click();`，`F1`执行
+1. 选择设备/agent 调试
+2. 新建一个 action doc -> 输入 print("hello world"); -> `F1`执行
