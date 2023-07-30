@@ -10,10 +10,13 @@ agent>=0.0.4 支持 rest-assured
 
 ```java
 import static io.restassured.RestAssured.*;
+import io.restassured.RestAssured;
+import io.restassured.http.Headers;
 import io.restassured.http.ContentType;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.filter.log.LogDetail;
+import io.restassured.response.Response;
 ```
 
 ### 通用配置(非必要)
