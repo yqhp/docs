@@ -179,6 +179,7 @@ CREATE TABLE `doc` (
   `pkg_id` varchar(32) NOT NULL DEFAULT '0',
   `weight` int(11) NOT NULL DEFAULT '0',
   `kind` tinyint(4) NOT NULL,
+  `flow` tinyint(4) NOT NULL,
   `name` varchar(128) NOT NULL,
   `description` varchar(256) NOT NULL DEFAULT '' COMMENT '描述',
   `content` longtext,
