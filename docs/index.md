@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "yqhp"
   text: "高代码自动化平台"
-  tagline: "一切尽在你的掌握"
+  tagline: "让自动化触手可及"
   actions:
     - theme: brand
       text: 立即开始

@@ -43,8 +43,8 @@
    ```java
    import org.openqa.selenium.*;
    import org.openqa.selenium.remote.*;
-   import org.openqa.selenium.support.PageFactory;
    import org.openqa.selenium.interactions.*;
+   import org.openqa.selenium.support.*;
    import org.openqa.selenium.support.ui.*;
    import org.openqa.selenium.chrome.ChromeDriver;
    ```
