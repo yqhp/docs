@@ -6,8 +6,8 @@
 
 | 变量名 | 说明       | API                                                                                                                |
 | ------ | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| device | 设备调试   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/DeviceYQHP.java) |
-| yqhp   | agent 调试 | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/YQHP.java)       |
+| device | 设备调试   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Device.java) |
+| agent   | agent 调试 | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Agent.java)       |
 
 ## 初始化
 
