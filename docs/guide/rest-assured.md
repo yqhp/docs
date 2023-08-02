@@ -4,25 +4,10 @@
 agent>=0.0.4 支持 rest-assured
 :::
 
-## 初始化
-
-### import
-
-```java
-import static io.restassured.RestAssured.*;
-import io.restassured.RestAssured;
-import io.restassured.http.Headers;
-import io.restassured.http.ContentType;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.specification.RequestSpecification;
-import io.restassured.filter.log.LogDetail;
-import io.restassured.response.Response;
-```
-
-### 通用配置(非必要)
+## 初始化(非必要)
 
 :::tip
-注意，请勿全局修改 RestAssured，会影响到其他项目。如: RestAssured.baseURI
+注意，请勿全局修改 RestAssured，如: RestAssured.baseURI="https://xxx"，会影响到其他项目。
 :::
 
 ```java

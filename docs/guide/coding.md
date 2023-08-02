@@ -4,10 +4,10 @@
 
 > 内置变量为 doc 可以直接使用的变量，如 device.appiumDriver()
 
-| 变量名 | 说明       | API                                                                                                                |
-| ------ | ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| 变量名 | 说明       | API                                                                                                            |
+| ------ | ---------- | -------------------------------------------------------------------------------------------------------------- |
 | device | 设备调试   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Device.java) |
-| agent   | agent 调试 | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Agent.java)       |
+| agent  | agent 调试 | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Agent.java)  |
 
 ## 初始化
 
@@ -46,6 +46,7 @@
    import org.openqa.selenium.interactions.*;
    import org.openqa.selenium.support.*;
    import org.openqa.selenium.support.ui.*;
+   import org.openqa.selenium.support.locators.RelativeLocator;
    import org.openqa.selenium.chrome.ChromeDriver;
    ```
 
@@ -59,6 +60,19 @@
    import io.appium.java_client.android.nativekey.*;
    ```
 
+   (接口自动化)doc: `rest-assured导入`
+
+   ```java
+   import static io.restassured.RestAssured.*;
+   import io.restassured.RestAssured;
+   import io.restassured.http.Headers;
+   import io.restassured.http.ContentType;
+   import io.restassured.builder.RequestSpecBuilder;
+   import io.restassured.specification.RequestSpecification;
+   import io.restassured.filter.log.LogDetail;
+   import io.restassured.response.Response;
+   ```
+
    doc: `断言导入`
 
    ```java
@@ -66,7 +80,7 @@
    import static org.junit.jupiter.api.Assertions.*;
    ```
 
-3. 在`init`目录下新建初始化插件 doc（类型为`初始化`, 流程为`失败终止`, 状态为`发布`）
+3. 在`init`目录下按需新建初始化插件 doc（类型为`初始化`, 流程为`失败终止`, 状态为`发布`）
 
 [查看](/guide/plugins#插件列表)
 

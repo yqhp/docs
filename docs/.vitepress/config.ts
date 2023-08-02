@@ -22,6 +22,7 @@ export default defineConfig({
           { text: "Coding指南", link: "/guide/coding" },
           { text: "Webview", link: "/guide/webview" },
           { text: "HttpClient(rest-assured)", link: "/guide/rest-assured" },
+          { text: "Web自动化(selenium)", link: "/guide/selenium" },
           { text: "图像识别", link: "/guide/easyimg" },
           { text: "Kafka配置", link: "/guide/kafka-conf" },
         ],
