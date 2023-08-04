@@ -20,6 +20,7 @@ export default defineConfig({
           { text: "快速入门", link: "/guide/quick-start" },
           { text: "插件", link: "/guide/plugins" },
           { text: "Coding指南", link: "/guide/coding" },
+          { text: "文件管理", link: "/guide/file-manager" },
           { text: "Webview", link: "/guide/webview" },
           { text: "HttpClient(rest-assured)", link: "/guide/rest-assured" },
           { text: "Web自动化(selenium)", link: "/guide/selenium" },
