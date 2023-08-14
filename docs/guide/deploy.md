@@ -108,12 +108,17 @@ docker run --privileged -d \
    $ appium -v
    2.0.0
 
-   # 安装uiautomator2驱动(由于部分资源来自github，没有梯子的话需要多试n次)
+   # (Android)安装uiautomator2驱动(由于部分资源来自github，没有梯子的话需要多试n次)
    $ appium driver install uiautomator2
+
+   # (iOS)安装xcuitest驱动(由于部分资源来自github，没有梯子的话需要多试n次)
+   $ appium driver install xcuitest
+
    # 查看已安装的驱动
    $ appium driver list --installed
    ✔ Listing installed drivers
-   - uiautomator2@2.29.2 [installed (npm)]
+   - uiautomator2@2.29.3 [installed (npm)]
+   - xcuitest@4.33.2 [installed (npm)]
 
    ```
 
