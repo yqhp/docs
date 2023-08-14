@@ -148,18 +148,18 @@ $ java -jar agent-web-{version}.jar \
 
 > ${NACOS_ADDR:127.0.0.1:8848} 代表默认读取环境变量 NACOS_ADDR，不存在则为 127.0.0.1:8848
 
-| 配置                                     | 说明                                           | 默认                              | since |
-| ---------------------------------------- | ---------------------------------------------- | --------------------------------- | ----- |
-| spring.cloud.nacos.discovery.ip          | agent 注册到 nacos 的 ip                       | `${NACOS_DISCOVERY_IP:}`          | 0.0.1 |
-| spring.cloud.nacos.discovery.server-addr | nacos 地址                                     | `${NACOS_ADDR:127.0.0.1:8848}`    | 0.0.1 |
-| spring.kafka.bootstrap-servers           | kafka 地址                                     | `${KAFKA_SERVERS:127.0.0.1:9094}` | 0.0.1 |
-| zk.addr                                  | zookeeper 地址                                 | `${ZK_ADDR:127.0.0.1:2181}`       | 0.0.1 |
-| agent.description                        | agent 调试页面展示的描述                       | `${AGENT_DESC:}`                  | 0.2.0 |
-| agent.schedule.receive-task-enabled      | 是否领取计划任务，`true` or `false`            | `false`                           | 0.2.7 |
-| agent.android.enabled                    | 是否开启 android 自动化功能，`true` or `false` | `false`                           | 0.0.1 |
-| agent.iOS.realDevice.enabled             | 是否开启 iOS 真机自动化功能，`true` or `false` | `false`                           | 0.3.0 |
-| agent.iOS.wda-bundle-id                  | WebDriverAgent bundle id                       | `${WDA_BUNDLE_ID:}`               | 0.3.0 |
-| agent.opencv.enabled                     | 是否开启图像识别功能，`true` or `false`        | `false`                           | 0.2.7 |
+| 配置                                     | 说明                                                                                                            | 默认                              | since |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----- |
+| spring.cloud.nacos.discovery.ip          | agent 注册到 nacos 的 ip                                                                                        | `${NACOS_DISCOVERY_IP:}`          | 0.0.1 |
+| spring.cloud.nacos.discovery.server-addr | nacos 地址                                                                                                      | `${NACOS_ADDR:127.0.0.1:8848}`    | 0.0.1 |
+| spring.kafka.bootstrap-servers           | kafka 地址                                                                                                      | `${KAFKA_SERVERS:127.0.0.1:9094}` | 0.0.1 |
+| zk.addr                                  | zookeeper 地址                                                                                                  | `${ZK_ADDR:127.0.0.1:2181}`       | 0.0.1 |
+| agent.description                        | agent 调试页面展示的描述                                                                                        | `${AGENT_DESC:}`                  | 0.2.0 |
+| agent.schedule.receive-task-enabled      | 是否领取计划任务，`true` or `false`                                                                             | `false`                           | 0.2.7 |
+| agent.android.enabled                    | 是否开启 android 自动化功能，`true` or `false`                                                                  | `false`                           | 0.0.1 |
+| agent.iOS.realDevice.enabled             | 是否开启 iOS 真机自动化功能，`true` or `false`                                                                  | `false`                           | 0.3.0 |
+| agent.iOS.wda-bundle-id                  | iOS 自动化必填，为[iOS 设备接入 agent](/guide/ios-device-connect-to-agent)填写的 WebDriverAgentRunner bundle id | `${WDA_BUNDLE_ID:}`               | 0.3.0 |
+| agent.opencv.enabled                     | 是否开启图像识别功能，`true` or `false`                                                                         | `false`                           | 0.2.7 |
 
 ## 验证所有服务是否部署完成
 
