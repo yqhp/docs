@@ -5,15 +5,19 @@ Page Object 简称 po 模式，是 UI 自动化常用的代码组织方式，利
 ```java
 class HomePage {
 
-    // https://github.com/appium/java-client/blob/master/src/main/java/io/appium/java_client/pagefactory/iOSXCUITFindBy.java
-    // https://github.com/appium/java-client/blob/master/src/main/java/io/appium/java_client/pagefactory/AndroidFindBy.java
+    // ios https://github.com/appium/java-client/blob/master/src/main/java/io/appium/java_client/pagefactory/iOSXCUITFindBy.java
+    // android https://github.com/appium/java-client/blob/master/src/main/java/io/appium/java_client/pagefactory/AndroidFindBy.java
+    // web https://github.com/SeleniumHQ/selenium/blob/trunk/java/src/org/openqa/selenium/support/FindBy.java
     @iOSXCUITFindBy(xpath = "//xxx")
     @AndroidFindBy(accessibility = "登录，按钮")
+    @FindBy(xpath="//*[text()='登 录']")
     WebElement loginBtn;
 
-    // 注意，这里需要和class名称一致，这是java语法规则
     HomePage() {
+        // 移动端
         PageFactory.initElements(new AppiumFieldDecorator(device.appiumDriver()), this);
+        // web
+        // PageFactory.initElements(driver, this);
     }
 
     void goToLoginPage1() {
@@ -38,7 +42,10 @@ class 手机号登录注册页 {
     By 登录按钮 = AppiumBy.id("xxx:id/submit");
 
     手机号登录注册页() {
+        // 移动端
         PageFactory.initElements(new AppiumFieldDecorator(device.appiumDriver()), this);
+        // web
+        // PageFactory.initElements(driver, this);
     }
 
     手机号登录注册页 输入手机号(String phone) {
