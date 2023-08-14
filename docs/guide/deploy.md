@@ -132,15 +132,15 @@ $ cd yqhp-agent
 # 解压后文件夹内应包含agent-web-{version}.jar lib.{version} vendor
 $ ls
 agent-web-0.0.1.jar lib.v1  vendor
-# 启动agent服务，注意：先进入jar所在目录，再用java -jar启动服务，因为配置文件包含vendor相对路径
-# 调整version/nacos/kafka/zk地址
-# 为了避免非执行机领取到计划任务，请勿配置--agent.schedule.receive-task-enabled=true
+# 注意：先进入jar所在目录，再用java -jar启动服务，因为配置文件包含vendor相对路径
 $ java -jar agent-web-{version}.jar \
    --spring.cloud.nacos.discovery.server-addr=192.168.2.128:8848 \
    --spring.kafka.bootstrap-servers=192.168.2.128:9094 \
    --zk.addr=192.168.2.128:2181 \
    --agent.schedule.receive-task-enabled=true \
    --agent.android.enabled=true \
+   --agent.iOS.realDevice.enabled=true \
+   --agent.iOS.wda-bundle-id=com.yqhp.WebDriverAgentRunner \
    --agent.opencv.enabled=true
 ```
 
@@ -155,8 +155,10 @@ $ java -jar agent-web-{version}.jar \
 | spring.kafka.bootstrap-servers           | kafka 地址                                     | `${KAFKA_SERVERS:127.0.0.1:9094}` | 0.0.1 |
 | zk.addr                                  | zookeeper 地址                                 | `${ZK_ADDR:127.0.0.1:2181}`       | 0.0.1 |
 | agent.description                        | agent 调试页面展示的描述                       | `${AGENT_DESC:}`                  | 0.2.0 |
-| agent.schedule.receive-task-enabled      | 是否领取计划提交执行的任务，`true` or `false`  | `false`                           | 0.2.7 |
-| agent.android.enabled                    | 是否开启 android 自动化功能，`true` or `false` | `false`                           | 0.2.7 |
+| agent.schedule.receive-task-enabled      | 是否领取计划任务，`true` or `false`            | `false`                           | 0.2.7 |
+| agent.android.enabled                    | 是否开启 android 自动化功能，`true` or `false` | `false`                           | 0.0.1 |
+| agent.iOS.realDevice.enabled             | 是否开启 iOS 真机自动化功能，`true` or `false` | `false`                           | 0.3.0 |
+| agent.iOS.wda-bundle-id                  | WebDriverAgent bundle id                       | `${WDA_BUNDLE_ID:}`               | 0.3.0 |
 | agent.opencv.enabled                     | 是否开启图像识别功能，`true` or `false`        | `false`                           | 0.2.7 |
 
 ## 验证所有服务是否部署完成
