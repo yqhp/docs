@@ -16,7 +16,14 @@ export default defineConfig({
         items: [
           { text: "简介", link: "/guide/what-is-yqhp" },
           { text: "部署", link: "/guide/deploy" },
-          { text: "android设备接入agent", link: "/guide/android-device-connect-to-agent" },
+          {
+            text: "android设备接入agent",
+            link: "/guide/android-device-connect-to-agent",
+          },
+          {
+            text: "iOS设备接入agent",
+            link: "/guide/ios-device-connect-to-agent",
+          },
           { text: "快速入门", link: "/guide/quick-start" },
           { text: "插件", link: "/guide/plugins" },
           { text: "Coding指南", link: "/guide/coding" },
