@@ -1,4 +1,4 @@
-# android 设备接入 agent
+# Android 设备接入 agent
 
 打开 android 设备`USB调试`，使用 USB 数据线连接到已启动 agent 服务的主机。不同品牌的设备，可能需要额外进行设置
 
