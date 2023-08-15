@@ -1,5 +1,7 @@
 # Web 自动化 (selenium)
 
+<iframe src="//player.bilibili.com/player.html?aid=446709754&bvid=BV1Uj41167LT&cid=1219804331&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 ## 初始化
 
 doc: `初始化chromedriver`
@@ -29,7 +31,3 @@ void initChromeDriver() {
     img.setImgDir("download"); // 远程图片存放路径 yqhp-easyimg插件(非必要)
 }
 ```
-
-## 入门指南
-
-<iframe src="//player.bilibili.com/player.html?aid=446709754&bvid=BV1Uj41167LT&cid=1219804331&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
