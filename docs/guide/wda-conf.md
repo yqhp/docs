@@ -1,5 +1,7 @@
 # iOS wda 设置
 
+https://appium.github.io/appium-xcuitest-driver/4.30/settings/
+
 ## mjpeg 视频流
 
 ```sh
