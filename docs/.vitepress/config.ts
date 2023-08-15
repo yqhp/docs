@@ -28,7 +28,7 @@ export default defineConfig({
           { text: "插件", link: "/guide/plugins" },
           { text: "Coding指南", link: "/guide/coding" },
           { text: "文件管理", link: "/guide/file-manager" },
-          { text: "Wda设置", link: "/guide/wda-conf" },
+          { text: "iOS wda设置", link: "/guide/wda-conf" },
           { text: "Webview", link: "/guide/webview" },
           { text: "HttpClient(rest-assured)", link: "/guide/rest-assured" },
           { text: "Web自动化(selenium)", link: "/guide/selenium" },
