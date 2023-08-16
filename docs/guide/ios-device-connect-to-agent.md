@@ -12,20 +12,31 @@
 
 1. 命令行执行 `appium driver run xcuitest open-wda` 将自动打开 xcode 与 wda
 2. 安装 wda
+
+   2.1 WebDriverAgentLib
    ![An image](/install_wda/1.png)
+
+   2.2 WebDriverAgentRunner
    ![An image](/install_wda/2.png)
    ![An image](/install_wda/3.png)
+
+   2.3 安装 wda 到设备中
    ![An image](/install_wda/4.png)
    ![An image](/install_wda/5.png)
-3. 等待 Test 执行一段时间后，会发现设备已安装 WebDriverAgent，设备需信任该 APP: 设置 -> 通用 -> VPN 与设备管理 -> 开发者 APP -> 不受信任 -> 信任
+
+3. 等待 Test 执行一段时间后，会发现设备已安装 WebDriverAgent APP，设备需信任该 APP: 设置 -> 通用 -> VPN 与设备管理 -> 开发者 APP -> 不受信任 -> 信任
 
 ## 安装 go-ios 并测试能否运行 wda
 
-1. [点击下载 go-ios](https://github.com/danielpaulus/go-ios/releases)，解压 zip 获得 ios or ios.exe
-2. 将 ios or ios.exe 所在路径添加到 Path，以便命令行与 agent 可以调用
-3. 验证 go-ios 能否运行 wda
+1. 安装 go-ios
 
-   3.1 打开终端执行
+   方式 1. `npm install -g go-ios`
+
+   方式 2. [点击下载 go-ios](https://github.com/danielpaulus/go-ios/releases)，解压 zip 获得 ios or ios.exe，将 ios or ios.exe 所在路径添加到 Path，以便命令行与 agent 可以调用
+
+2. 验证 go-ios 能否运行 wda
+
+   2.1 运行 wda
 
    ```sh
    # 注意: 将com.yqhp.WebDriverAgentRunner调整为你在安装wda时，填写的WebDriverAgentRunner bundle id
@@ -34,12 +45,12 @@
    --xctestconfig=WebDriverAgentRunner.xctest
    ```
 
-   3.2 开一个新的终端执行
+   2.2 开一个新的终端执行 forward
 
    ```sh
    $ ios forward 9100 9100
    ```
 
-   3.3 访问 `http://localhost:9100` 能看到手机投屏即可
+   2.3 访问 `http://localhost:9100` 能看到手机投屏即可
 
-4. 关闭步骤 3 开启的 2 个终端窗口，以免影响后续操作
+3. 关闭步骤 2 开启的 2 个终端窗口，以免影响后续操作

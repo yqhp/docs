@@ -50,27 +50,50 @@ docker run --privileged -d \
 
 ## 部署 agent
 
-### agent 环境搭建
+### 安装 java
 
-1. 安装 java
+`>=java11`(oraclejdk 与 openjdk 都可以，推荐 java11)，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (windows: `%JAVA_HOME%\bin`) 添加到 `Path`
 
-   `>=java11`(oraclejdk 与 openjdk 都可以，推荐 java11)，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (win: `%JAVA_HOME%\bin`) 添加到 `Path`
+```bash
+# 验证java版本是否>=11
+$ java -version
+java version "11.0.14" 2022-01-18 LTS
+Java(TM) SE Runtime Environment 18.9 (build 11.0.14+8-LTS-263)
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.14+8-LTS-263, mixed mode)
+```
+
+### 移动端自动化环境搭建
+
+1. 安装 nodejs
+
+   推荐最新 LTS 版本。node -v >= v16.0.0, npm -v >= 8.0.0
 
    ```bash
-   # 验证java版本是否>=11
-   $ java -version
-   java version "11.0.14" 2022-01-18 LTS
-   Java(TM) SE Runtime Environment 18.9 (build 11.0.14+8-LTS-263)
-   Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.14+8-LTS-263, mixed mode)
+   # 验证nodejs
+   $ node -v
+   v18.16.0
+   $ npm -v
+   9.5.1
    ```
 
-2. (非 android 自动化，忽略这一步)安装 Android SDK
+2. 安装 appium2.x
 
-   > 建议安装 Android Studio 并启动，会自动下载 android sdk
-
-   环境变量配置 `ANDROID_HOME`，并将`$ANDROID_HOME/platform-tools` (win: `%ANDROID_HOME%\platform-tools`) 添加到 `Path`
+   如果已经安装了 appium1.x，需卸载。卸载命令: npm uninstall --location=global appium
 
    ```bash
+   # 安装appium2.x
+   $ npm i --location=global appium
+   # 安装完成后，验证appium版本
+   $ appium -v
+   2.0.0
+   ```
+
+3. (Android 自动化)安装 android sdk 与 appium uiautomator2 驱动
+
+   > 建议安装 Android Studio 并启动，按照提示下载 android sdk。环境变量配置 `ANDROID_HOME`，并将`$ANDROID_HOME/platform-tools` (windows: `%ANDROID_HOME%\platform-tools`) 添加到 `Path`
+
+   ```bash
+   # 验证ANDROID_HOME
    # linux / macos
    $ echo $ANDROID_HOME
    /Users/jiangyitao/Library/Android/sdk
@@ -91,36 +114,30 @@ docker run --privileged -d \
    # windows
    $ dir %ANDROID_HOME%\build-tools
    2023/05/22  11:51    <DIR>          33.0.2
-   ```
 
-3. (非移动端自动化，忽略这一步)安装 appium2.x
-
-   ```bash
-   # 安装nodejs，推荐最新LTS版本。node -v >= v16.0.0, npm -v >= 8.0.0
-   $ node -v
-   v18.16.0
-   $ npm -v
-   9.5.1
-
-   # 安装appium2.x (如果已经安装了appium1.x，需卸载。卸载命令: npm uninstall --location=global appium)
-   $ npm i --location=global appium
-   # 安装完成后，验证appium版本
-   $ appium -v
-   2.0.0
-
-   # (Android)安装uiautomator2驱动(由于部分资源来自github，没有梯子的话需要多试n次)
+   # 安装uiautomator2驱动(由于部分资源来自github，没有梯子的话可能需要多试几次)
    $ appium driver install uiautomator2
 
-   # (iOS)安装xcuitest驱动(由于部分资源来自github，没有梯子的话需要多试n次)
-   $ appium driver install xcuitest
-
-   # 查看已安装的驱动
+   # 验证驱动是否已安装
    $ appium driver list --installed
    ✔ Listing installed drivers
    - uiautomator2@2.29.3 [installed (npm)]
-   - xcuitest@4.33.2 [installed (npm)]
-
    ```
+
+4. (iOS 自动化)安装 xcuitest 驱动
+
+   ```bash
+   # 安装 xcuitest 驱动(由于部分资源来自github，没有梯子的话可能需要多试几次)
+   $ appium driver install xcuitest
+
+   # 验证驱动是否已安装
+   $ appium driver list --installed
+   ✔ Listing installed drivers
+   - xcuitest@4.33.2 [installed (npm)]
+   ```
+
+5. (iOS 自动化) 安装 wda 到 iOS 设备中
+   [点击查看](/guide/ios-device-connect-to-agent)
 
 ### 启动 agent 服务
 
@@ -134,14 +151,14 @@ $ ls
 agent-web-0.0.1.jar lib.v1  vendor
 # 注意：先进入jar所在目录，再用java -jar启动服务，因为配置文件包含vendor相对路径
 $ java -jar agent-web-{version}.jar \
-   --spring.cloud.nacos.discovery.server-addr=192.168.2.128:8848 \
-   --spring.kafka.bootstrap-servers=192.168.2.128:9094 \
-   --zk.addr=192.168.2.128:2181 \
-   --agent.schedule.receive-task-enabled=true \
-   --agent.android.enabled=true \
-   --agent.iOS.realDevice.enabled=true \
-   --agent.iOS.wda-bundle-id=com.yqhp.WebDriverAgentRunner \
-   --agent.opencv.enabled=true
+--spring.cloud.nacos.discovery.server-addr=192.168.2.128:8848 \
+--spring.kafka.bootstrap-servers=192.168.2.128:9094 \
+--zk.addr=192.168.2.128:2181 \
+--agent.schedule.receive-task-enabled=true \
+--agent.android.enabled=true \
+--agent.iOS.realDevice.enabled=true \
+--agent.iOS.wda-bundle-id=com.yqhp.WebDriverAgentRunner \
+--agent.opencv.enabled=true
 ```
 
 ### agent 常用配置说明
