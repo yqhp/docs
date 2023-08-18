@@ -3,6 +3,7 @@ version: '3'
 services:
   nacos:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/nacos-server:1.4.2
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -12,6 +13,7 @@ services:
 
   zookeeper:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/bitnami-zookeeper:3.6
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -23,6 +25,7 @@ services:
 
   kafka:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/bitnami-kafka:3.4
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -38,6 +41,7 @@ services:
 
   redis:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/bitnami-redis:6.2.10
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -49,6 +53,7 @@ services:
 
   mysql:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/mysql-server:5.7
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -62,6 +67,7 @@ services:
 
   minio:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/bitnami-minio:2023.3.24
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -75,6 +81,7 @@ services:
 
   yqhp-web-ui:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-web-ui:0.3.1
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -86,6 +93,7 @@ services:
 
   yqhp-gateway:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-gateway:0.3.0
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -93,12 +101,12 @@ services:
     environment:
       - NACOS_ADDR=nacos:8848
       - NACOS_DISCOVERY_IP=${MY_IP} # 该服务注册到nacos的ip，设置为宿主机ip
-    restart: always
     depends_on:
       - nacos
 
   yqhp-auth:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-auth:0.0.1
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -112,7 +120,6 @@ services:
       - AUTH_REDIS_HOST=redis
       - AUTH_REDIS_PORT=6379
       - AUTH_REDIS_PWD=yqhp@123..Aa88
-    restart: always
     depends_on:
       - nacos
       - mysql
@@ -120,6 +127,7 @@ services:
 
   yqhp-file:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-file:0.0.1
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -132,13 +140,13 @@ services:
       - MINIO_BUCKET=yqhp
       - MINIO_ACCESS_KEY=yqhp
       - MINIO_SECRET_KEY=yqhp@123..Aa88
-    restart: always
     depends_on:
       - nacos
       - minio
 
   yqhp-console:
     image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-console:0.2.4
+    restart: always
     networks:
       - yqhp-network
     ports:
@@ -154,7 +162,6 @@ services:
       - CONSOLE_REDIS_PWD=yqhp@123..Aa88
       - KAFKA_SERVERS=kafka:9092
       - ZK_ADDR=zookeeper:2181
-    restart: always
     depends_on:
       - nacos
       - mysql
