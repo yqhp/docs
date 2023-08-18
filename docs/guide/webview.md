@@ -21,15 +21,5 @@ d.androidDriver().context("NATIVE_APP");
 
 ## Webview 调试
 
-> 由于目前调试页面依赖 google 提供的地址，浏览器需要能访问"外网"
-
-:::tip
-由于浏览器安全限制，需要添加白名单
-
-1. chrome 浏览器，访问 chrome://settings/content/insecureContent
-2. 允许显示不安全的内容 -> 添加 -> https://chrome-devtools-frontend.appspot.com
-
-:::
-
 1. 设备调试页面，点击`chrome小图标`，点击`刷新`获取所有 webview
 2. 选择目标页面，点击`调试`将跳转到 webview 调试页面
