@@ -30,7 +30,7 @@ export default defineConfig({
           { text: "文件管理", link: "/guide/file-manager" },
           { text: "iOS wda设置", link: "/guide/wda-conf" },
           { text: "Webview", link: "/guide/webview" },
-          { text: "HttpClient(rest-assured)", link: "/guide/rest-assured" },
+          { text: "接口自动化(rest-assured)", link: "/guide/rest-assured" },
           { text: "Web自动化(selenium)", link: "/guide/selenium" },
           { text: "图像识别", link: "/guide/easyimg" },
           { text: "Kafka配置", link: "/guide/kafka-conf" },

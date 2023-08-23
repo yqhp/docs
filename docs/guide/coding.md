@@ -64,14 +64,17 @@
    (接口自动化)doc: `rest-assured导入`
 
    ```java
-   import static io.restassured.RestAssured.*;
+   import io.restassured.http.*;
+   import io.restassured.filter.*;
+   import io.restassured.builder.*;
+   import io.restassured.response.*;
+   import io.restassured.filter.log.*;
+   import io.restassured.specification.*;
+   import io.restassured.internal.print.*;
    import io.restassured.RestAssured;
-   import io.restassured.http.Headers;
-   import io.restassured.http.ContentType;
-   import io.restassured.builder.RequestSpecBuilder;
-   import io.restassured.specification.RequestSpecification;
-   import io.restassured.filter.log.LogDetail;
-   import io.restassured.response.Response;
+   import static io.restassured.RestAssured.*;
+   import static io.restassured.matcher.RestAssuredMatchers.*;
+   import static org.hamcrest.Matchers.*;
    ```
 
    doc: `断言导入`
