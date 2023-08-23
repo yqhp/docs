@@ -8,6 +8,7 @@
 | ------ | ---------- | -------------------------------------------------------------------------------------------------------------- |
 | device | 设备调试   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Device.java) |
 | agent  | agent 调试 | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Agent.java)  |
+| log    | 打印日志   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Logger.java) |
 
 ## 初始化
 
@@ -87,4 +88,4 @@
 ## 代码调试
 
 1. 选择设备/agent 调试
-2. 新建一个 action doc -> 输入 print("hello world"); -> `F1`执行
+2. 新建一个 action doc -> 输入 log.info("hello world"); -> `F1`执行
