@@ -54,12 +54,12 @@ class 手机号登录注册页 {
     }
 
     手机号登录注册页 输入验证码(String 验证码) {
-        d.find(验证码输入框).sendKeys(验证码);
+        d.findElement(验证码输入框).sendKeys(验证码);
         return this;
     }
 
     void 点击登录() {
-        d.find(登录按钮).click();
+        d.findElement(登录按钮).click();
     }
 }
 ```
