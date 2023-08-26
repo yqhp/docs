@@ -286,6 +286,7 @@ CREATE TABLE `doc_execution_record` (
   `start_time` bigint(20) NOT NULL DEFAULT '0',
   `end_time` bigint(20) NOT NULL DEFAULT '0',
   `results` json,
+  `logs` json,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_by` varchar(32) NOT NULL COMMENT '创建人',
