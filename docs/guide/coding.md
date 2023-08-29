@@ -4,11 +4,12 @@
 
 > 内置变量为 doc 可以直接使用的变量，如 device.appiumDriver()
 
-| 变量名 | 说明       | API                                                                                                            |
-| ------ | ---------- | -------------------------------------------------------------------------------------------------------------- |
-| device | 设备调试   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Device.java) |
-| agent  | agent 调试 | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Agent.java)  |
-| log    | 打印日志   | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Logger.java) |
+| 变量名  | 说明          | API                                                                                                             |
+| ------- | ------------- | --------------------------------------------------------------------------------------------------------------- |
+| device  | 设备调试      | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Device.java)  |
+| agent   | agent 调试    | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Agent.java)   |
+| browser | selenium 调试 | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Browser.java) |
+| log     | 打印日志      | [查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/jshell/Logger.java)  |
 
 ## 初始化
 

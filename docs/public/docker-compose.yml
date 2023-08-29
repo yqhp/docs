@@ -80,7 +80,7 @@ services:
       - MINIO_ROOT_PASSWORD=yqhp@123..Aa88
 
   yqhp-web-ui:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-web-ui:0.3.6
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-web-ui:0.3.7
     restart: always
     networks:
       - yqhp-network
@@ -145,7 +145,7 @@ services:
       - minio
 
   yqhp-console:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-console:0.2.6
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-console:0.3.0
     restart: always
     networks:
       - yqhp-network
