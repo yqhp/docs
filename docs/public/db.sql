@@ -199,7 +199,7 @@ CREATE TABLE `plan` (
   `project_id` varchar(32) NOT NULL,
   `name` varchar(128) NOT NULL,
   `description` varchar(256) NOT NULL DEFAULT '',
-  `run_mode` tinyint(4) NOT NULL DEFAULT '1',
+  `run_mode` tinyint(4) NOT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_by` varchar(32) NOT NULL COMMENT '创建人',
