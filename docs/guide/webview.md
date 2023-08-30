@@ -7,16 +7,16 @@
 ```java
 // 获取当前有哪些Context可以切换
 // 返回示例: [NATIVE_APP, WEBVIEW_io.appium.android.apis, WEBVIEW_chrome, WEBVIEW_com.android.browser]
-d.androidDriver().getContextHandles();
+driver.getContextHandles();
 
 // 切换到你想操作的webview，如: WEBVIEW_io.appium.android.apis
-d.androidDriver().context("WEBVIEW_io.appium.android.apis");
+driver.context("WEBVIEW_io.appium.android.apis");
 
 // 获取当前的Context，默认为原生NATIVE_APP
-d.androidDriver().getContext();
+driver.getContext();
 
 // 切换回原生
-d.androidDriver().context("NATIVE_APP");
+driver.context("NATIVE_APP");
 ```
 
 ## Webview 调试
