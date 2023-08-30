@@ -6,15 +6,16 @@
 | ---------------- | ------- | ------------------------------------------------------------------- |
 | v16 (2023-08-26) | console | `alter table doc_execution_record add logs json null after results` |
 
-## v17 (2023-08-29)
+## v17 (2023-08-30)
 
 - 增强 web ui 自动化功能
+- 新增log.screenshot，控制台/报告添加截图
 
 | 项目         | 版本  | 说明 |
 | ------------ | ----- | ---- |
-| yqhp-web-ui  | 0.3.7 |      |
+| yqhp-web-ui  | 0.3.8 |      |
 | yqhp-console | 0.3.0 |      |
-| yqhp-agent   | 0.3.4 |      |
+| yqhp-agent   | 0.3.5 |      |
 
 ## v16 (2023-08-26)
 
