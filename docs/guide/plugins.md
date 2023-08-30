@@ -113,9 +113,14 @@
         void clearApkData(String pkg) {
             device.androidShell("pm clear " + pkg);
         }
+
     }
 
     var d = new CustomAppiumDriver();
+    // android
+    var driver = d.androidDriver();
+    // ios
+    // var driver = d.iOSDriver();
     ```
 
 ### API
