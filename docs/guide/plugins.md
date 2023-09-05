@@ -21,7 +21,7 @@
 
 ## yqhp-appium
 
-### 初始化
+### 初始化-移动端
 
 1.  方式 1
 
@@ -122,6 +122,43 @@
     // ios
     // var driver = d.iOSDriver();
     ```
+
+### 初始化-web 端
+
+1. 方式 1
+
+   ```java
+   import com.yqhp.plugin.appium.*;
+
+   ChromeDriver driver;
+   RemoteWebDriverWrapper d;
+
+   void init() {
+       driver = browser.refreshChromeDriver();
+       d = new RemoteWebDriverWrapper(driver);
+   }
+   ```
+
+2. 方式 2（推荐）
+
+   > 扩展 RemoteWebDriverWrapper，根据团队需要，提供更多 API
+
+   ```java
+   import com.yqhp.plugin.appium.*;
+
+   class CustomWebDriver extends RemoteWebDriverWrapper {
+       CustomWebDriver(RemoteWebDriver driver) {
+           super(driver);
+       }
+   }
+
+   ChromeDriver driver;
+   RemoteWebDriverWrapper d;
+   void init() {
+       driver = browser.refreshChromeDriver();
+       d = new CustomWebDriver(driver);
+   }
+   ```
 
 ### API
 
