@@ -4,12 +4,25 @@ yqhp 是一个开源免费的分布式自动化系统。yqhp 推崇`Code First`�
 
 <iframe src="//player.bilibili.com/player.html?bvid=BV1V14y1Q7Pd&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
+## 技术栈
+
+- 前端主要基于 `Vue3` `Element-Plus` `Monaco-Editor` 构建
+- 后端服务主要基于`SpringCloud`构建
+
+## 为什么选择 yqhp
+
+- 立即执行任意一行或一块代码得到反馈，而不用每次从头开始执行
+- 上下文保存数据，反复测试对象提供的 api，快速验证想法和调试代码
+- 帮助初学者逐步掌握编程，体验编程的乐趣
+- 开箱即用，不必担心复杂的项目设置
+- 各类自动化支持，一站式解决方案
+
 ## 自动化支持
 
 - Android/iOS 自动化 (appium)
 - Web 自动化 (selenium)
 - 接口自动化 (rest-assured)
-- 一切自动化
+- ...
 
 ## 入门指南（视频）
 
