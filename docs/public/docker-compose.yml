@@ -8,6 +8,8 @@ services:
       - yqhp-network
     ports:
       - "8848:8848"
+      - "9848:9848"
+      - "9849:9849"
     environment:
       MODE: standalone
 
