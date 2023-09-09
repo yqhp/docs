@@ -2,7 +2,7 @@ version: '3'
 
 services:
   nacos:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/nacos-server:1.4.2
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/nacos-server:v2.2.0.1
     restart: always
     networks:
       - yqhp-network
@@ -92,7 +92,7 @@ services:
       - yqhp-gateway
 
   yqhp-gateway:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-gateway:1.0.0
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-gateway:1.0.1
     restart: always
     networks:
       - yqhp-network
@@ -105,7 +105,7 @@ services:
       - nacos
 
   yqhp-auth:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-auth:1.0.0
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-auth:1.0.1
     restart: always
     networks:
       - yqhp-network
@@ -126,7 +126,7 @@ services:
       - redis
 
   yqhp-file:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-file:1.0.0
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-file:1.0.1
     restart: always
     networks:
       - yqhp-network
@@ -145,7 +145,7 @@ services:
       - minio
 
   yqhp-console:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-console:1.0.1
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-console:1.0.2
     restart: always
     networks:
       - yqhp-network
