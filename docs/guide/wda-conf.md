@@ -6,7 +6,7 @@ https://appium.github.io/appium-xcuitest-driver/4.30/settings/
 
 ## mjpeg 视频流
 
-```sh
+```java
 // wda视频流每秒截图次数 | 1~60 | 默认10
 driver.setSetting("mjpegServerFramerate", 10);
 // wda视频流截图缩放比 | 1~100 | 默认100
@@ -17,7 +17,7 @@ driver.setSetting("mjpegServerScreenshotQuality", 25);
 
 ## PageSource
 
-```sh
+```java
 // PageSource树的最大深度，越小获取越快，默认50
 driver.setSetting("snapshotMaxDepth", 50);
 ```
