@@ -6,12 +6,14 @@
 
 - 新增执行状态: 跳过状态
 - webview page 展示 id
+- 内置变量 agent 新增 sleep 方法
+- 内置变量 agent 新增 createJdbcTemplate 方法，用于操作数据库
 
 | 项目         | 版本  | 说明 |
 | ------------ | ----- | ---- |
 | yqhp-web-ui  | 1.0.3 |      |
 | yqhp-console | 1.0.3 |      |
-| yqhp-agent   | 1.0.6 |      |
+| yqhp-agent   | 1.0.7 |      |
 
 ## v3 (2023-09-10)
 
