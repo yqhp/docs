@@ -59,6 +59,6 @@ var updateCount = consoleJdbc.update("update project set name = 'project888' whe
 ## Delete
 
 ```java
-var deleteCount = consoleDBClient.update("delete from project where id = '000'");
-var deleteCount = consoleDBClient.update("delete from project where id = ?", "id001");
+var deleteCount = consoleJdbc.update("delete from project where id = '000'");
+var deleteCount = consoleJdbc.update("delete from project where id = ?", "id001");
 ```
