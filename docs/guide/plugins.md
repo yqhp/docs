@@ -83,8 +83,8 @@
         *
         * @param appUri app url or filePath
         */
-        void installApp(String appUri) {
-            device.installApp(appUri);
+        void installApp(String appUri, String... extraArgs) {
+            device.installApp(appUri, extraArgs);
         }
 
         /**
