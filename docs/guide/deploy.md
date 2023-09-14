@@ -15,6 +15,11 @@
    ```sh
    # 下载docker-compose.yml
    curl https://yqhp.github.io/docs/docker-compose.yml > docker-compose.yml
+
+   # docker-compose.yml不适用 mac m芯片，需修改docker-compose.yml
+   # mac m芯片: nacos image tag后面添加 -slim，如v2.2.0.1-slim
+   # mac m芯片: 除nacos外，其他image下方添加 platform: linux/x86_64
+
    # 将192.168.2.128替换为宿主机局域网ip
    export MY_IP=192.168.2.128;docker-compose up -d
    ```
