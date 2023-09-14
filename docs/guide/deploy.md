@@ -20,7 +20,20 @@
    ```
 
 2. 连接数据库执行初始化 [sql](/db.sql)
-   > 数据库用户名密码 root / yqhp@123..Aa88，端口 3306。mysql 在启动过程中可能连接失败，重试即可
+   ```sh
+   # 查看mysql容器
+   docker ps
+   # 进入mysql容器
+   docker exec -it ${MYSQL_CONTAINER_ID} bash
+   # 下载sql文件
+   curl https://yqhp.github.io/docs/db.sql > db.sql
+   # 连接mysql
+   mysql -uroot -pyqhp@123..Aa88
+   # 执行sql文件
+   source db.sql
+   # 查看是否存在auth与console数据库
+   show database;
+   ```
 3. 初始化 minio 数据
    1. 访问 `http://{宿主机 ip}:9001`，账号密码 admin / yqhp@123..Aa88
    2. Buckets -> 点击 Create Bucket -> Bucket Name 填写 yqhp -> 点击 Create Bucket，完成创建（若 yqhp 已存在，则忽略这步）
