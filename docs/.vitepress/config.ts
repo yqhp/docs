@@ -27,6 +27,7 @@ export default defineConfig({
           { text: "快速入门", link: "/guide/quick-start" },
           { text: "插件", link: "/guide/plugins" },
           { text: "Coding指南", link: "/guide/coding" },
+          { text: "任务执行监听", link: "/guide/task-execution-listener"},
           { text: "文件管理", link: "/guide/file-manager" },
           { text: "iOS wda设置", link: "/guide/wda-conf" },
           { text: "Webview", link: "/guide/webview" },
