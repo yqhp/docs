@@ -28,7 +28,7 @@
    # 下载sql文件
    curl https://yqhp.github.io/docs/db.sql > db.sql
    # 连接mysql
-   mysql -uroot -pyqhp@123..Aa88
+   mysql -uroot -pyqhp@123..Aa88 --default-character-set=utf8mb4
    # 执行sql文件
    source db.sql
    # 查看是否存在auth与console数据库
