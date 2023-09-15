@@ -72,10 +72,18 @@ body2.put("name", "hello");
 body2.put("description", "this is hello project");
 given().spec(reqSpec).header(authHeader).contentType(ContentType.JSON).body(body2).post("/console/project");
 // 方式3
-var body3 = "{\"name\":\"hello\",\"description\":\"this is hello project\"}";
+String body3 = "{\"name\":\"hello\",\"description\":\"this is hello project\"}";
 given().spec(reqSpec).header(authHeader).contentType(ContentType.JSON).body(body3).post("/console/project");
-// 方式4
-// object为某一个对象，如project对象
+// 方式4(java>=15)
+String body4 = """
+    {
+        "name": "hello",
+        "description": "this is hello project"
+    }
+""";
+given().spec(reqSpec).header(authHeader).contentType(ContentType.JSON).body(body4).post("/console/project");
+// 方式5
+// object为某一个对象，如Project对象
 given().spec(reqSpec).header(authHeader).contentType(ContentType.JSON).body(object).post("/console/project");
 ```
 
