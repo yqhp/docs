@@ -137,7 +137,7 @@ services:
     environment:
       - NACOS_ADDR=nacos:8848
       - NACOS_DISCOVERY_IP=${MY_IP} # 该服务注册到nacos的ip，设置为宿主机ip
-      - MINIO_PUBLIC_ENDPOINT=http://${MY_IP}:9000 # 注意，MINIO_PUBLIC_ENDPOINT是文件上传后返回的下载地址前缀，需要调整为可用的地址，如:http://宿主机地址:9000
+      - MINIO_PUBLIC_ENDPOINT=http://${MY_IP}:9000 # 文件下载地址前缀。若minio可以使用域名访问，可以将这个变量调整为域名
       - MINIO_ENDPOINT=http://minio:9000
       - MINIO_BUCKET=yqhp
       - MINIO_ACCESS_KEY=yqhp
