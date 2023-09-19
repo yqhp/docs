@@ -7,12 +7,13 @@
 - agent 调整 createJdbcTemplate 入参
 - yqhp-web-ui 合并最新 v3-admin-vite 代码
   - title 显示路由 name
+  - 布局模式调整为 top
   - 开放主题设置
 
 | 项目        | 版本  | 说明 |
 | ----------- | ----- | ---- |
 | yqhp-agent  | 1.1.2 |      |
-| yqhp-web-ui | 1.0.4 |      |
+| yqhp-web-ui | 1.0.5 |      |
 
 ## v5 (2023-09-14)
 
