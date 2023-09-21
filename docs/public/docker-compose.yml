@@ -147,7 +147,7 @@ services:
       - minio
 
   yqhp-console:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-console:1.0.4
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-console:1.0.5
     restart: always
     networks:
       - yqhp-network
