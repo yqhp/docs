@@ -15,8 +15,8 @@ import com.yqhp.console.repository.entity.DocExecutionRecord;
 agent.setTaskExecutionListener(new TaskExecutionListener() {
 
     @Override
-    public void onEvalDocSkipped(DocExecutionRecord record) {
-        log.warn("跳过执行: " + record.getDoc().getName());
+    public void onEvalActionsStarted(Task task) {
+        // 开始执行actions
     }
 
     @Override
@@ -36,6 +36,11 @@ agent.setTaskExecutionListener(new TaskExecutionListener() {
         if (record.getDoc().getKind() == DocKind.JSH_ACTION) {
             log.screenshot();
         }
+    }
+
+    @Override
+    public void onEvalDocSkipped(DocExecutionRecord record) {
+        log.warn("跳过执行: " + record.getDoc().getName());
     }
 
     @Override
