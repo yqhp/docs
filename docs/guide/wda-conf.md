@@ -2,7 +2,7 @@
 
 https://appium.github.io/appium-xcuitest-driver/4.30/settings/
 
-<iframe src="//player.bilibili.com/player.html?aid=617349421&bvid=BV1n84y1o721&cid=1234959347&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=617349421&bvid=BV1n84y1o721&cid=1234959347&page=1" allowfullscreen="true" width="100%" height="400px" />
 
 ## mjpeg 视频流
 

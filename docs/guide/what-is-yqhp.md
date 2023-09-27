@@ -2,7 +2,7 @@
 
 yqhp 是一个开源免费的分布式自动化系统。yqhp 推崇`Code First`，并提供强大的在线交互式编程体验。开源地址: [点击查看](https://github.com/yqhp)
 
-<iframe src="//player.bilibili.com/player.html?bvid=BV1V14y1Q7Pd&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1V14y1Q7Pd&page=1" allowfullscreen="true" width="100%" height="400px" />
 
 ## 技术栈
 

@@ -12,4 +12,4 @@
 
 :::
 
-<iframe src="//player.bilibili.com/player.html?aid=786226117&bvid=BV1r14y1Q7XF&cid=1203089231&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=786226117&bvid=BV1r14y1Q7XF&cid=1203089231&page=1" allowfullscreen="true" width="100%" height="400px" />
