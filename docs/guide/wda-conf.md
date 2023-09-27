@@ -21,3 +21,11 @@ driver.setSetting("mjpegServerScreenshotQuality", 25);
 // PageSource树的最大深度，越小获取越快，默认50
 driver.setSetting("snapshotMaxDepth", 50);
 ```
+
+## 提升 Touch 响应速度
+
+如点击/滑动屏幕
+
+```java
+driver.setSetting("snapshotMaxDepth", 0);
+```
