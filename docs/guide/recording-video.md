@@ -33,3 +33,12 @@ File videoFile = device.stopRecordingScreen();
 // 将录屏文件添加到日志。该方法会上传videoFile到文件服务，并删除本地videoFile
 log.video(videoFile);
 ```
+
+## 已知问题
+
+目前平台使用 appium 录屏，android 端底层使用 adb shell screenrecord 录屏，大部分华为手机不支持
+
+```sh
+# 验证手机是否支持screenrecord
+$ adb shell screenrecord --help
+```
