@@ -67,7 +67,7 @@ agent.setTaskExecutionListener(new TaskExecutionListener() {
         // action
         if (record.getDoc().getKind() == DocKind.JSH_ACTION) {
             // 停止录屏
-            var video = device.stopRecordingScreen();
+            File video = device.stopRecordingScreen();
             if (video != null) video.delete();
         }
     }

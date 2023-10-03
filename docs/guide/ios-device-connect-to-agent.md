@@ -32,7 +32,7 @@
 
    方式 1. `npm install -g go-ios`
 
-   方式 2. [点击下载 go-ios](https://github.com/danielpaulus/go-ios/releases)，解压 zip 获得 ios or ios.exe，将 ios or ios.exe 所在路径添加到 Path，以便命令行与 agent 可以调用
+   方式 2. [点击下载 go-ios](https://github.com/danielpaulus/go-ios/releases)，解压 zip 获得 ios or ios.exe，将 ios or ios.exe 所在路径添加到 `PATH`，以便命令行与 agent 可以调用
 
 2. 验证 go-ios 能否运行 wda
 

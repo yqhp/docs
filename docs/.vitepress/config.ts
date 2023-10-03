@@ -34,6 +34,7 @@ export default defineConfig({
           { text: "接口自动化(rest-assured)", link: "/guide/rest-assured" },
           { text: "Web自动化(selenium)", link: "/guide/selenium" },
           { text: "图像识别", link: "/guide/easyimg" },
+          { text: "移动端屏幕录制", link: "/guide/recording-video" },
           { text: "数据库操作", link: "/guide/database-operation" },
           { text: "Kafka配置", link: "/guide/kafka-conf" },
         ],
