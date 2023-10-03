@@ -4,7 +4,7 @@
 
 [点击查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/task/TaskExecutionListener.java)
 
-## 初始化
+## 初始化(移动端，按需调整)
 
 ```java
 import com.yqhp.agent.task.TaskExecutionListener;
@@ -22,25 +22,54 @@ agent.setTaskExecutionListener(new TaskExecutionListener() {
     @Override
     public void onEvalDocStarted(DocExecutionRecord record) {
         log.info("开始执行: " + record.getDoc().getName());
+        // action
+        if (record.getDoc().getKind() == DocKind.JSH_ACTION) {
+            // 开启录屏
+            // android https://github.com/appium/appium-android-driver/blob/master/lib/commands/types.ts StartScreenRecordingOpts
+            // iOS https://github.com/appium/appium-xcuitest-driver/blob/master/lib/commands/types.ts StartRecordingScreenOptions
+            device.startRecordingScreen(Map.of(
+                // "videoSize", "1920x1080", // android: height x width
+                "bitRate", 1000000, // android: 1 Mbit/s
+                "videoType", "libx264",// iOS: ffmpeg -vcodec
+                "videoQuality", "low", // iOS: 'low' | 'medium' | 'high' | 'photo', mjpegServerScreenshotQuality: 10 | 25 | 75 | 100
+                "videoFps", 5, // iOS: mjpegServerFramerate
+                "forceRestart", true,
+                "timeLimit", 1800 // 单位:second, appium限制录屏最长30分钟
+            ));
+        }
     }
 
     @Override
     public void onEvalDocSucceed(DocExecutionRecord record) {
         log.info("执行成功: " + record.getDoc().getName());
+        // action
+        if (record.getDoc().getKind() == DocKind.JSH_ACTION) {
+            // 停止录屏并记录到日志
+            log.video(device.stopRecordingScreen());
+        }
     }
 
     @Override
     public void onEvalDocFailed(DocExecutionRecord record, Throwable cause) {
         log.error("执行失败: " + record.getDoc().getName());
-        // ui自动化: action失败截图
+        // action
         if (record.getDoc().getKind() == DocKind.JSH_ACTION) {
+            // 截图
             log.screenshot();
+            // 停止录屏并记录到日志
+            log.video(device.stopRecordingScreen());
         }
     }
 
     @Override
     public void onEvalDocSkipped(DocExecutionRecord record) {
         log.warn("跳过执行: " + record.getDoc().getName());
+        // action
+        if (record.getDoc().getKind() == DocKind.JSH_ACTION) {
+            // 停止录屏
+            var video = device.stopRecordingScreen();
+            if (video != null) video.delete();
+        }
     }
 
     @Override
