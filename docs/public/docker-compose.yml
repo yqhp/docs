@@ -82,7 +82,7 @@ services:
       - MINIO_ROOT_PASSWORD=yqhp@123..Aa88
 
   yqhp-web-ui:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-web-ui:1.1.0
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-web-ui:1.1.1
     restart: always
     networks:
       - yqhp-network
@@ -94,7 +94,7 @@ services:
       - yqhp-gateway
 
   yqhp-gateway:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-gateway:1.0.1
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-gateway:1.0.2
     restart: always
     networks:
       - yqhp-network
@@ -107,7 +107,7 @@ services:
       - nacos
 
   yqhp-auth:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-auth:1.0.1
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-auth:1.0.2
     restart: always
     networks:
       - yqhp-network
@@ -128,7 +128,7 @@ services:
       - redis
 
   yqhp-file:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-file:1.0.1
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-file:1.0.2
     restart: always
     networks:
       - yqhp-network
@@ -147,7 +147,7 @@ services:
       - minio
 
   yqhp-console:
-    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-console:1.0.7
+    image: registry.cn-hangzhou.aliyuncs.com/jiangyitao/yqhp-console:1.0.8
     restart: always
     networks:
       - yqhp-network
