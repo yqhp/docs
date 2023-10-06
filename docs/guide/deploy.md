@@ -70,14 +70,16 @@ docker run --privileged -d \
 
 ### 安装 java
 
-`>=java11`，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (windows: `%JAVA_HOME%\bin`) 添加到 `PATH`
+OpenJDK 下载: https://jdk.java.net/archive/
+
+要求`java >= 11`，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (windows: `%JAVA_HOME%\bin`) 添加到 `PATH`
 
 ```bash
-# 验证java版本是否>=11
+# 验证java是否>=11
 $ java -version
-java version "11.0.14" 2022-01-18 LTS
-Java(TM) SE Runtime Environment 18.9 (build 11.0.14+8-LTS-263)
-Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.14+8-LTS-263, mixed mode)
+openjdk version "17.0.2" 2022-01-18
+OpenJDK Runtime Environment (build 17.0.2+8-86)
+OpenJDK 64-Bit Server VM (build 17.0.2+8-86, mixed mode, sharing)
 ```
 
 ### 移动端自动化环境搭建
