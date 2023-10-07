@@ -60,6 +60,7 @@
    import io.appium.java_client.pagefactory.*;
    import io.appium.java_client.android.*;
    import io.appium.java_client.android.nativekey.*;
+   import io.appium.java_client.ios.*;
    ```
 
    (接口自动化)doc: `rest-assured导入`
