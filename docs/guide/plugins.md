@@ -16,7 +16,7 @@
 
 | 渠道 | 插件         | 说明                                                | 下载地址                                                                                                                                                                     | 说明                  |
 | ---- | ------------ | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
-| yqhp | yqhp-appium  | 包装 AppiumDriver/RemoteWebDriver，提供更简易的 api | [appium-plugin-0.0.7.jar](http://139.9.5.56:9000/yqhp-res/appium-plugin-0.0.7.jar)                                                                                           | [查看](#yqhp-appium)  |
+| yqhp | yqhp-appium  | 包装 AppiumDriver/RemoteWebDriver，提供更简易的 api | [appium-plugin-0.0.8.jar](http://139.9.5.56:9000/yqhp-res/appium-plugin-0.0.8.jar)                                                                                           | [查看](#yqhp-appium)  |
 | yqhp | yqhp-easyimg | 图片识别 api                                        | [easyimg-plugin-0.0.5.jar](http://139.9.5.56:9000/yqhp-res/easyimg-plugin-0.0.5.jar) <br> [common-opencv-0.0.2.jar](http://139.9.5.56:9000/yqhp-res/common-opencv-0.0.2.jar) | [查看](#yqhp-easyimg) |
 
 ## yqhp-appium
