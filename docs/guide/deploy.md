@@ -40,8 +40,8 @@
    show database;
    ```
 3. 初始化 minio 数据
-   1. 访问 `http://{宿主机 ip}:9001`，账号密码 admin / yqhp@123..Aa88
-   2. Buckets -> 点击 Create Bucket -> Bucket Name 填写 yqhp -> 点击 Create Bucket，完成创建（若 yqhp 已存在，则忽略这步）
+   1. 访问 http://{docker 宿主机 ip}:9001，账号密码 admin / yqhp@123..Aa88
+   2. Buckets -> 点击 Create Bucket -> Bucket Name 填写 yqhp -> 点击 Create Bucket，完成创建
    3. Buckets -> 点击 yqhp 进入编辑页面 -> 将 Access Policy 设置为 public
    4. Access Keys -> 点击 Create Access Key -> Access Key 填写 yqhp -> Secret Key 填写yqhp@123..Aa88 -> 点击 Create 完成创建
 
@@ -72,7 +72,7 @@ docker run --privileged -d \
 
 OpenJDK 下载: https://jdk.java.net/archive/
 
-要求`java >= 11`，环境变量配置 `JAVA_HOME`，并将 `$JAVA_HOME/bin` (windows: `%JAVA_HOME%\bin`) 添加到 `PATH`
+要求 java >= 11 (推荐 17)，环境变量配置 JAVA_HOME，并将 $JAVA_HOME/bin (windows: %JAVA_HOME%\bin) 添加到 `PATH`
 
 ```bash
 # 验证java是否>=11
@@ -108,9 +108,9 @@ OpenJDK 64-Bit Server VM (build 17.0.2+8-86, mixed mode, sharing)
    2.0.0
    ```
 
-3. (Android 自动化)安装 android sdk 与 appium uiautomator2 驱动
+3. (Android 自动化) 安装 android sdk 与 appium uiautomator2 驱动
 
-   > 建议安装 Android Studio 并启动，按照提示下载 android sdk。环境变量配置 `ANDROID_HOME`，并将`$ANDROID_HOME/platform-tools` (windows: `%ANDROID_HOME%\platform-tools`) 添加到 `PATH`
+   > 建议安装 Android Studio 并启动，按照提示下载 android sdk。环境变量配置 ANDROID_HOME，并将$ANDROID_HOME/platform-tools (windows: %ANDROID_HOME%\platform-tools) 添加到 `PATH`
 
    ```bash
    # 验证ANDROID_HOME
@@ -135,7 +135,7 @@ OpenJDK 64-Bit Server VM (build 17.0.2+8-86, mixed mode, sharing)
    $ dir %ANDROID_HOME%\build-tools
    2023/05/22  11:51    <DIR>          33.0.2
 
-   # 安装uiautomator2驱动(由于部分资源来自github，没有梯子的话可能需要多试几次)
+   # 安装uiautomator2驱动
    $ appium driver install uiautomator2
 
    # 验证驱动是否已安装
@@ -144,10 +144,10 @@ OpenJDK 64-Bit Server VM (build 17.0.2+8-86, mixed mode, sharing)
    - uiautomator2@2.29.3 [installed (npm)]
    ```
 
-4. (iOS 自动化)安装 xcuitest 驱动
+4. (iOS 自动化) 安装 xcuitest 驱动
 
    ```bash
-   # 安装 xcuitest 驱动(由于部分资源来自github，没有梯子的话可能需要多试几次)
+   # 安装 xcuitest 驱动
    $ appium driver install xcuitest
 
    # 验证驱动是否已安装
@@ -156,7 +156,7 @@ OpenJDK 64-Bit Server VM (build 17.0.2+8-86, mixed mode, sharing)
    - xcuitest@4.33.2 [installed (npm)]
    ```
 
-5. (iOS 自动化)安装 wda 到 iOS 设备中
+5. (iOS 自动化) 安装 wda 到 iOS 设备中
    [点击查看](/guide/ios-device-connect-to-agent)
 
 6. 移动端屏幕录制
@@ -188,20 +188,20 @@ $ java -jar agent-web-{version}.jar \
 
 > ${NACOS_ADDR:127.0.0.1:8848} 代表默认读取环境变量 NACOS_ADDR，不存在则为 127.0.0.1:8848
 
-| 配置                                     | 说明                                                                                                            | 默认                              | since |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----- |
-| spring.cloud.nacos.discovery.ip          | agent 注册到 nacos 的 ip                                                                                        | `${NACOS_DISCOVERY_IP:}`          | 0.0.1 |
-| spring.cloud.nacos.discovery.server-addr | nacos 地址                                                                                                      | `${NACOS_ADDR:127.0.0.1:8848}`    | 0.0.1 |
-| spring.kafka.bootstrap-servers           | kafka 地址                                                                                                      | `${KAFKA_SERVERS:127.0.0.1:9094}` | 0.0.1 |
-| zk.addr                                  | zookeeper 地址                                                                                                  | `${ZK_ADDR:127.0.0.1:2181}`       | 0.0.1 |
-| agent.description                        | agent 调试页面展示的描述                                                                                        | `${AGENT_DESC:}`                  | 0.2.0 |
-| agent.schedule.receive-task-enabled      | 是否领取计划任务，`true` or `false`                                                                             | `false`                           | 0.2.7 |
-| agent.android.enabled                    | 是否开启 android 自动化功能，`true` or `false`                                                                  | `false`                           | 0.0.1 |
-| agent.iOS.realDevice.enabled             | 是否开启 iOS 真机自动化功能，`true` or `false`                                                                  | `false`                           | 0.3.0 |
-| agent.iOS.wda-bundle-id                  | iOS 自动化必填，为[iOS 设备接入 agent](/guide/ios-device-connect-to-agent)填写的 WebDriverAgentRunner bundle id | `${WDA_BUNDLE_ID:}`               | 0.3.0 |
-| agent.opencv.enabled                     | 是否开启图像识别功能，`true` or `false`                                                                         | `false`                           | 0.2.7 |
+| 配置                                     | 说明                                                                                                                    | 默认                              | since |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----- |
+| spring.cloud.nacos.discovery.ip          | agent 注册到 nacos 的 ip                                                                                                | `${NACOS_DISCOVERY_IP:}`          | 0.0.1 |
+| spring.cloud.nacos.discovery.server-addr | nacos 地址                                                                                                              | `${NACOS_ADDR:127.0.0.1:8848}`    | 0.0.1 |
+| spring.kafka.bootstrap-servers           | kafka 地址                                                                                                              | `${KAFKA_SERVERS:127.0.0.1:9094}` | 0.0.1 |
+| zk.addr                                  | zookeeper 地址                                                                                                          | `${ZK_ADDR:127.0.0.1:2181}`       | 0.0.1 |
+| agent.description                        | agent 调试页面展示的描述                                                                                                | `${AGENT_DESC:}`                  | 0.2.0 |
+| agent.schedule.receive-task-enabled      | 是否领取计划任务，`true` or `false`                                                                                     | `false`                           | 0.2.7 |
+| agent.android.enabled                    | 是否开启 android 自动化功能，`true` or `false`                                                                          | `false`                           | 0.0.1 |
+| agent.iOS.realDevice.enabled             | 是否开启 iOS 真机自动化功能，`true` or `false`                                                                          | `false`                           | 0.3.0 |
+| agent.iOS.wda-bundle-id                  | iOS 自动化必填，为[iOS 设备接入 agent](/guide/ios-device-connect-to-agent)安装 wda 时填写的 `Product Bundle Identifier` | `${WDA_BUNDLE_ID:}`               | 0.3.0 |
+| agent.opencv.enabled                     | 是否开启图像识别功能，`true` or `false`                                                                                 | `false`                           | 0.2.7 |
 
 ## 验证所有服务是否部署完成
 
-- 登录 nacos 注册中心，`http://{宿主机 ip}:8848/nacos`，账号密码: `nacos / nacos`
+- 登录 nacos 注册中心 http://{docker 宿主机 ip}:8848/nacos，账号密码: nacos / nacos
 - 进入`服务管理/服务列表`，列表内展示`agent-service` `auth-service` `console-service` `file-service` `gateway-service` 代表服务部署完成

@@ -1,6 +1,6 @@
 # 文件管理
 
-目前 yqhp 使用 minio 管理静态文件，后台管理地址 http://{宿主机 ip}:9001 ([查看详情](/guide/deploy.html#部署服务))
+目前 yqhp 使用 minio 管理静态文件，后台管理地址 http://{docker 宿主机 ip}:9001 ([查看详情](/guide/deploy.html#部署服务))
 
 ## 上传文件
 
@@ -10,8 +10,8 @@
 
 1. 创建 Bucket: Buckets -> Create Bucket -> Bucket Name: app -> Create Bucket -> app 的 Access Policy 设置为 public
 2. 上传文件: Object Browser -> app -> Upload
-3. 文件下载: `http://{宿主机 ip}:9000(注意不是 9001 端口)/{bucket}/{paths}(没有创建路径，则忽略)/{filename}`
-   > 如: `http://192.168.2.128:9000/app/1.apk    http://192.168.2.128:9000/app/android/1.apk`
+3. 文件下载: `http://{docker 宿主机 ip}:9000/{bucket}/{paths}(没有创建路径，则忽略)/{filename}`
+   > 如: `http://192.168.2.128:9000/app/1.apk http://192.168.2.128:9000/app/android/1.apk`
 
 ### 通过接口上传文件
 

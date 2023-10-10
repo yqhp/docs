@@ -13,11 +13,11 @@ class HomePage {
     @FindBy(xpath="//*[text()='登 录']")
     WebElement loginBtn;
 
-    HomePage() {
+    HomePage(WebDriver ctx) {
         // 移动端
-        PageFactory.initElements(new AppiumFieldDecorator(device.appiumDriver()), this);
-        // web
-        // PageFactory.initElements(driver, this);
+        PageFactory.initElements(new AppiumFieldDecorator(ctx), this);
+        // pc web 端
+        // PageFactory.initElements(ctx, this);
     }
 
     void goToLoginPage1() {
@@ -41,11 +41,11 @@ class 手机号登录注册页 {
     By 验证码输入框 = By.id("xxx:id/et_capture");
     By 登录按钮 = AppiumBy.id("xxx:id/submit");
 
-    手机号登录注册页() {
+    手机号登录注册页(WebDriver ctx) {
         // 移动端
-        PageFactory.initElements(new AppiumFieldDecorator(device.appiumDriver()), this);
-        // web
-        // PageFactory.initElements(driver, this);
+        PageFactory.initElements(new AppiumFieldDecorator(ctx), this);
+        // pc web 端
+        // PageFactory.initElements(ctx, this);
     }
 
     手机号登录注册页 输入手机号(String phone) {
@@ -65,7 +65,7 @@ class 手机号登录注册页 {
 ```
 
 ```java
-HomePage homePage = new HomePage();
+HomePage homePage = new HomePage(driver);
 homePage.goToLoginPage2()
           .输入手机号("18812345678")
           .输入验证码("1234")

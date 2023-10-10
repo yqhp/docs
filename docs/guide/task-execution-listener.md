@@ -4,7 +4,9 @@
 
 [点击查看](https://github.com/yqhp/yqhp/blob/main/agent/agent-web/src/main/java/com/yqhp/agent/task/TaskExecutionListener.java)
 
-## 初始化(移动端，按需调整)
+## 初始化
+
+> 以下为移动端示例，展示了在每个 action 执行前开启录屏，执行后停止录屏，并将录屏添加到 log，以便在报告中展示
 
 ```java
 import com.yqhp.agent.task.TaskExecutionListener;
@@ -16,7 +18,7 @@ agent.setTaskExecutionListener(new TaskExecutionListener() {
 
     @Override
     public void onEvalActionsStarted(Task task) {
-        // 开始执行actions
+        // 开始执行全部action前将调用该方法，可以在这里执行初始化操作，比如安装APP
     }
 
     @Override
@@ -46,6 +48,9 @@ agent.setTaskExecutionListener(new TaskExecutionListener() {
         if (record.getDoc().getKind() == DocKind.JSH_ACTION) {
             // 停止录屏并记录到日志
             log.video(device.stopRecordingScreen());
+            // 如果执行成功不想保留视频到log，以节省文件服务器存储空间，可以注释上1行代码，并打开下面2行代码
+            // File video = device.stopRecordingScreen();
+            // if (video != null) video.delete();
         }
     }
 

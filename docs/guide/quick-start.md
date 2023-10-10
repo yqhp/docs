@@ -1,6 +1,6 @@
 # 快速入门
 
-登录 yqhp 系统，`http://{宿主机 ip}`，账号密码: `admin / admin`
+登录 yqhp 系统 http://{docker 宿主机 ip}，账号密码: admin / admin
 
 ## 系统管理
 
@@ -14,8 +14,8 @@
 
 ### 用户管理
 
-- `配置角色`，`超级管理员`拥有所有权限
-- `参与项目`，配置用户参与的项目。拥有`超级管理员`角色的用户，默认参与所有项目
+- `配置角色`: 配置用户角色，超级管理员拥有所有权限
+- `参与项目`: 配置用户参与的项目。拥有超级管理员角色的用户，默认参与所有项目
 
 ## Coding
 
@@ -47,7 +47,7 @@ doc 流程:
 
 - 失败终止
 
-  计划提交执行后，doc 执行失败，不再继续执行下一个 doc，相当于任务结束，初始化 doc 推荐设置该方式。某些特殊的 action 也推荐该方式，如前置的 action
+  计划提交执行后，doc 执行失败，不再继续执行下一个 doc，相当于任务结束。初始化 doc 推荐设置该方式，某些特殊的 action 也推荐该方式，如前置的 action
 
 ### 代码编辑区域（中间）
 
@@ -103,7 +103,7 @@ Appium 日志
 
 ### 提交执行
 
-> agent 启动参数 agent.schedule.receive-task-enabled=false，agent 与 agent 连接的设备都不会领取任务执行
+> 若 agent 启动参数 agent.schedule.receive-task-enabled=false，agent 与 agent 连接的设备都不会领取任务执行
 
 - Agent/Selenium 模式
 

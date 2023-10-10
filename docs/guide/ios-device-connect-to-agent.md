@@ -14,17 +14,21 @@
 2. 安装 wda
 
    2.1 WebDriverAgentLib
+
    ![An image](/install_wda/1.png)
 
    2.2 WebDriverAgentRunner
+
+   `Product Bundle Identifier` 调整为唯一值(如: com.你的公司名.WebDriverAgentRunner)，后续将使用该值启动 wda
    ![An image](/install_wda/2.png)
    ![An image](/install_wda/3.png)
 
-   2.3 安装 wda 到设备中
+   2.3 安装 wda 到设备中 (iOS >= 16 需打开开发者模式，请自行百度打开方法)
+
    ![An image](/install_wda/4.png)
    ![An image](/install_wda/5.png)
 
-3. 等待 Test 执行一段时间后，会发现设备已安装 WebDriverAgent APP，设备需信任该 APP: 设置 -> 通用 -> VPN 与设备管理 -> 开发者 APP -> 不受信任 -> 信任
+3. 等待 Test 执行一段时间后，会发现设备已安装 WebDriverAgent APP，设备需信任该 APP: 设置 -> 通用 -> VPN 与设备管理 -> 开发者 APP -> 信任
 
 ## 安装 go-ios 并测试能否运行 wda
 
@@ -32,14 +36,15 @@
 
    方式 1. `npm install -g go-ios`
 
-   方式 2. [点击下载 go-ios](https://github.com/danielpaulus/go-ios/releases)，解压 zip 获得 ios or ios.exe，将 ios or ios.exe 所在路径添加到 `PATH`，以便命令行与 agent 可以调用
+   方式 2. [点击下载 go-ios](https://github.com/danielpaulus/go-ios/releases)，解压 zip 获得 ios / ios.exe，将 ios / ios.exe 所在路径添加到 `PATH`，以便命令行与 agent 可以调用
 
 2. 验证 go-ios 能否运行 wda
 
    2.1 运行 wda
 
+   将 `com.yqhp.WebDriverAgentRunner` 调整为安装 wda 时 `Product Bundle Identifier`所填写的值
+
    ```sh
-   # 注意: 将com.yqhp.WebDriverAgentRunner调整为你在安装wda时，填写的WebDriverAgentRunner bundle id
    $ ios runwda --bundleid=com.yqhp.WebDriverAgentRunner.xctrunner \
    --testrunnerbundleid=com.yqhp.WebDriverAgentRunner.xctrunner \
    --xctestconfig=WebDriverAgentRunner.xctest
