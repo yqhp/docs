@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "yqhp"
-  text: "交互式编程自动化系统"
+  text: "分布式自动化测试系统"
   tagline: "让自动化触手可及"
   actions:
     - theme: brand
