@@ -68,6 +68,10 @@ docker run --privileged -d \
 
 ## 部署 agent
 
+:::tip
+一台主机只能运行一个 agent，一个 agent 可连接多台移动设备
+:::
+
 ### 安装 java
 
 OpenJDK 下载: https://jdk.java.net/archive/
@@ -205,3 +209,19 @@ $ java -jar agent-web-{version}.jar \
 
 - 登录 nacos 注册中心 http://{docker 宿主机 ip}:8848/nacos，账号密码: nacos / nacos
 - 进入`服务管理/服务列表`，列表内展示`agent-service` `auth-service` `console-service` `file-service` `gateway-service` 代表服务部署完成
+
+## 集群部署(高可用)
+
+对服务要求高的同学，可以使用集群部署方案。这样的好处是，防止单点故障，更好的性能，并支持不停服更新，保证服务一直可用
+
+1. 只保留[docker-compose.yml](/docker-compose.yml)里的中间件并启动，若要部署中间件(如 nacos，redis，kafka)集群，需调整服务配置，请自行解决
+2. `yqhp-gateway` `yqhp-auth` `yqhp-console` `yqhp-file`，每个服务至少部署 2 个节点
+3. 调整`yqhp-web-ui`镜像内的 nginx 配置，使流量能转发到所有`yqhp-gateway`节点
+
+---
+
+不停服更新流程(以`yqhp-console`为例说明):
+
+1. `nacos` 下线 1 个`yqhp-console`节点 (配置管理 -> 服务列表 -> console-service 详情 -> 集群下线一个节点)，下线后流量将不会流入到该节点
+2. kill 下线的节点，启动更新后的服务，启动完成后，观察`nacos`该服务是否已上线
+3. 若上一个节点成功在`nacos`上线，则更新下一个节点，直到所有节点全部更新完成
