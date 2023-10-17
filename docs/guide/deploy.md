@@ -37,7 +37,7 @@
    # 执行sql文件
    source db.sql
    # 查看是否存在auth与console数据库
-   show database;
+   show databases;
    ```
 3. 初始化 minio 数据
    1. 访问 http://{docker 宿主机 ip}:9001，账号密码 admin / yqhp@123..Aa88
