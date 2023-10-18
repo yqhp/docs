@@ -177,6 +177,7 @@ $ cd yqhp-agent
 $ ls
 agent-web-0.0.1.jar lib.v1  vendor
 # 注意：先进入jar所在目录，再用java -jar启动服务，因为配置文件包含vendor相对路径
+# 将192.168.2.128替换为docker宿主机ip
 $ java -jar agent-web-{version}.jar \
 --spring.cloud.nacos.discovery.server-addr=192.168.2.128:8848 \
 --spring.kafka.bootstrap-servers=192.168.2.128:9094 \
@@ -209,6 +210,30 @@ $ java -jar agent-web-{version}.jar \
 
 - 登录 nacos 注册中心 http://{docker 宿主机 ip}:8848/nacos，账号密码: nacos / nacos
 - 进入`服务管理/服务列表`，列表内展示`agent-service` `auth-service` `console-service` `file-service` `gateway-service` 代表服务部署完成
+
+## 服务更新
+
+更新部分服务
+
+1. 更新 [docker-compose.yml](/docker-compose.yml)
+2. 停止相关 docker 容器 `docker stop ${CONTAINER_ID}`
+3. 进入 docker-compose.yml 所在目录，启动 docker-compose
+   ```sh
+   # 将192.168.2.128替换为宿主机局域网ip
+   export MY_IP=192.168.2.128;docker-compose up -d
+   ```
+
+---
+
+更新全部服务
+
+1. 更新 [docker-compose.yml](/docker-compose.yml)
+2. 进入 docker-compose.yml 所在目录，`docker-compose down`
+3. 启动 docker-compose
+   ```sh
+   # 将192.168.2.128替换为宿主机局域网ip
+   export MY_IP=192.168.2.128;docker-compose up -d
+   ```
 
 ## 集群部署(高可用)
 
